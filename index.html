@@ -4,214 +4,566 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customizable Button & Form</title>
+    <title>Customizable Button & Content</title>
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
     <script src="https://unpkg.com/grapesjs"></script>
     <script src="https://unpkg.com/grapesjs-tailwind"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            height: 100%;
+        }
+
+        /* Adjust block preview in block manager */
+        .gjs-block {
+            padding: 0 !important;
+            width: 100% !important;
+            min-height: auto !important;
+        }
+
+        .gjs-block svg {
+            width: 100%;
+        }
+    </style>
 </head>
-
-<style>
-    body, html {
-        margin: 0;
-        height: 100%;
-    }
-
-    /* Adjust block preview in block manager */
-    .gjs-block {
-        padding: 0 !important;
-        width: 100% !important;
-        min-height: auto !important;
-    }
-
-    .gjs-block svg {
-        width: 100%;
-    }
-</style>
 
 <body>
     <div id="gjs"></div>
     <script>
+        // Create a GrapesJS plugin for adding the Oswald font
+        grapesjs.plugins.add('grapesjs-oswald-font', (editor) => {
+            const fontLink = 'https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap';
+
+            // Inject the font into the canvas styles
+            editor.on('load', () => {
+                const canvasStyles = editor.Canvas.getDocument().head.querySelectorAll('style, link');
+                const fontExists = Array.from(canvasStyles).some((style) =>
+                    style.href?.includes('fonts.googleapis.com')
+                );
+
+                if (!fontExists) {
+                    const linkEl = document.createElement('link');
+                    linkEl.rel = 'stylesheet';
+                    linkEl.href = fontLink;
+                    editor.Canvas.getDocument().head.appendChild(linkEl);
+                }
+            });
+        });
+
         // Initialize GrapesJS
         const editor = grapesjs.init({
             container: '#gjs',
             height: '100%',
             fromElement: true,
             storageManager: false,
-            plugins: ['grapesjs-tailwind'],
+            plugins: ['grapesjs-tailwind', 'grapesjs-oswald-font'],
             canvas: {
-                styles: ['https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css'],
+                styles: [
+                    'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css',
+                ],
             },
         });
 
-        // Add a customizable button block with a live preview in the block manager
-        editor.BlockManager.add("tailwind-button", {
+        // Add a block with an image, title, and description
+        editor.BlockManager.add('custom-content-block', {
             label: `
-                <div class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    Customizable Button
-                </div>
-            `,
+                <div style="text-align: center;">
+                    <img src="https://via.placeholder.com/150?text=Content+Preview" alt="Content Preview" style="max-width: 100%; height: auto;">
+                </div>`,
+            category: 'Buttons', // Or another category if preferred
             content: `
-                <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    Customizable Button
-                </a>
-            `,
-            attributes: { class: 'gjs-fonts gjs-f-button' },
-            category: 'Basic',
+                <div class="w-full text-center font-oswald">
+                    <img class="w-full" src="https://via.placeholder.com/300" alt="img" />
+                    <p class="pt-12 pb-5 w-[70%] mx-auto text-center text-3xl font-oswald">
+                        CLASSIC ENOUGH TO MAKE A STATEMENT. MODERN ENOUGH TO KEEP YOU CONNECTED.
+                    </p>
+                    <p class="w-[70%] mx-auto text-center text-lg font-oswald">
+                        You haven’t seen a smartwatch this small that can do this much. With a flick of your wrist, the stylish patterned lens reveals a bright touchscreen display, and when you’re done, the display disappears.
+                    </p>
+                </div>`,
         });
 
-        // Add the ability to customize the button's attributes
-        editor.DomComponents.addType('custom-button', {
-            isComponent: el => el.tagName === 'A' && el.classList.contains('custom-button'),
-            model: {
-                defaults: {
-                    tagName: 'a',
-                    droppable: false,
-                    attributes: { href: '#' },
-                    classes: [
-                        'text-white', 'bg-blue-700', 'hover:bg-blue-800', 'focus:ring-4', 'focus:ring-blue-300',
-                        'font-medium', 'rounded-lg', 'text-sm', 'px-5', 'py-2.5', 'me-2', 'mb-2',
-                        'dark:bg-blue-600', 'dark:hover:bg-blue-700', 'focus:outline-none', 'dark:focus:ring-blue-800'
-                    ],
-                    traits: [
-                        {
-                            type: 'text',
-                            label: 'Text',
-                            name: 'innerHTML',
-                            placeholder: 'Button Text',
-                        },
-                        {
-                            type: 'href',
-                            label: 'URL',
-                            name: 'href',
-                        },
-                        {
-                            type: 'class_select',
-                            options: [
-                                { value: 'bg-blue-700', name: 'Blue' },
-                                { value: 'bg-red-700', name: 'Red' },
-                                { value: 'bg-green-700', name: 'Green' },
-                                { value: 'bg-yellow-700', name: 'Yellow' },
-                            ],
-                            label: 'Background Color',
-                            name: 'class',
-                        },
-                        {
-                            type: 'select',
-                            label: 'Font Size',
-                            name: 'font-size',
-                            options: [
-                                { value: 'text-sm', name: 'Small' },
-                                { value: 'text-md', name: 'Medium' },
-                                { value: 'text-lg', name: 'Large' }
-                            ],
-                        },
-                    ],
-                },
-            },
-        });
-
-        // Add the custom contact form block
-        editor.BlockManager.add("Form", {
-            label: "Custom Contact Form",
-            content: `
-                <div class="p-4 mx-auto max-w-xl bg-white font-[sans-serif] custom-contact-form">
-                    <h1 class="text-3xl text-gray-800 font-extrabold text-center">Contact us</h1>
-                    <form class="mt-8 space-y-4">
-                        <input type='text' placeholder='Name'
-                            class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500" />
-                        <input type='email' placeholder='Email'
-                            class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500" />
-                        <input type='text' placeholder='Subject'
-                            class="w-full rounded-md py-3 px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm outline-blue-500" />
-                        <textarea placeholder='Message' rows="6"
-                            class="w-full rounded-md px-4 text-gray-800 bg-gray-100 focus:bg-transparent text-sm pt-3 outline-blue-500"></textarea>
-                        <button type='button'
-                            class="text-white bg-blue-500 hover:bg-blue-600 tracking-wide rounded-md text-sm px-4 py-3 w-full">Send</button>
-                    </form>
+        editor.BlockManager.add('six-item-grid', {
+        label: `
+            <div style="text-align: center; padding: 10px;">
+                <strong>6-Item Grid</strong>
+                <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 5px; margin-top: 10px;">
+                    <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Discrete-Display.svg" style="width: 40px; height: 40px;" alt="" />
+                    <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Battery_Life.svg" style="width: 40px; height: 40px;" alt="" />
+                    <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Health_Monitoring.svg" style="width: 40px; height: 40px;" alt="" />
+                    <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Smart_notifications.svg" style="width: 40px; height: 40px;" alt="" />
+                    <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Health_And_Fitness_Tracking.svg" style="width: 40px; height: 40px;" alt="" />
+                    <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Walking.svg" style="width: 40px; height: 40px;" alt="" />
                 </div>
-            `,
-            attributes: { class: 'gjs-fonts gjs-f-button' },
-            category: 'Basic',
-        });
+            </div>`,
+        category: 'Grid Systems',
+        content: `
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 w-[80%] mx-auto gap-4 pt-12">
+                <div class="flex flex-col justify-center items-center text-center gap-2">
+                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Discrete-Display.svg" alt="" />
+                    <p class="text-sm">
+                        Stylish patterned lens or smart touchscreen? Why not both?
+                    </p>
+                </div>
+                <div class="flex flex-col justify-center items-center text-center gap-2">
+                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Battery_Life.svg" alt="" />
+                    <p class="text-sm">
+                        Don’t put life on pause. Go longer between charges with up to 5 days of battery life.
+                    </p>
+                </div>
+                <div class="flex flex-col justify-center items-center text-center gap-2">
+                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Health_Monitoring.svg" alt="" />
+                    <p class="text-sm">
+                        One small, fashionable smartwatch to keep track of your important health stats.
+                    </p>
+                </div>
+                <div class="flex flex-col justify-center items-center text-center gap-2">
+                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Smart_notifications.svg" alt="" />
+                    <p class="text-sm">
+                        One small, fashionable smartwatch to keep track of your important health stats.
+                    </p>
+                </div>
+                <div class="flex flex-col justify-center items-center text-center gap-2">
+                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Health_And_Fitness_Tracking.svg" alt="" />
+                    <p class="text-sm">
+                        Yes, this watch tracks your steps, sleep, stress and energy levels.
+                    </p>
+                </div>
+                <div class="flex flex-col justify-center items-center text-center gap-2">
+                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Walking.svg" alt="" />
+                    <p class="text-sm">
+                        One small, fashionable smartwatch to keep track of your important health stats.
+                    </p>
+                </div>
+            </div>
+        `,
+    });
 
-        // Add the ability to customize the contact form's attributes
-        editor.DomComponents.addType('custom-contact-form', {
+    editor.BlockManager.add('large-image', {
+        label: `
+            <div style="text-align: center; padding: 10px;">
+                <strong>Large Image</strong>
+                <img src="https://res.garmin.com/en/products/010-02384-02/g/55168-FAN-D.jpg" 
+                     style="width: 100%; height: auto; padding-top: 10px;" 
+                     alt="Large Image Preview">
+            </div>`,
+        category: 'Images',
+        content: `
+            <div class="w-full text-center">
+                <img class="pt-16" 
+                     src="https://res.garmin.com/en/products/010-02384-02/g/55168-FAN-D.jpg" 
+                     alt="Large Image">
+            </div>
+        `,
+    });
+    editor.BlockManager.add('three-item-grid', {
+        label: `
+            <div style="text-align: center; padding: 10px;">
+                <strong>3-Item Grid</strong>
+                <div style="display: flex; justify-content: center; gap: 10px; text-align: left;">
+                    <div>
+                        <p style="font-size: 16px; font-weight: bold; margin-bottom: 5px;">SMALL, STYLISH AND SMART</p>
+                        <p style="font-size: 12px;">This stylish smartwatch is the first of its kind...</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 16px; font-weight: bold; margin-bottom: 5px;">CLASSIC OR SPORT STYLES</p>
+                        <p style="font-size: 12px;">Choose from classic and sport designs...</p>
+                    </div>
 
-            isComponent: el => el.tagName === 'FORM' && el.classList.contains('custom-contact-form'),
-            model: {
-                defaults: {
-                    tagName: 'form',
-                    traits: [
-                        {
-                            type: 'text',
-                            label: 'Name Placeholder',
-                            name: 'name-placeholder',
-                        },
-                        {
-                            type: 'text',
-                            label: 'Email Placeholder',
-                            name: 'email-placeholder',
-                        },
-                        {
-                            type: 'text',
-                            label: 'Message Placeholder',
-                            name: 'message-placeholder',
-                        },
-                    ],
-                },
-            },
-        });
+                    <div>
+                        <p style="font-size: 16px; font-weight: bold; margin-bottom: 5px;">any</p>
+                        <p style="font-size: 12px;">Choose from classic and sport designs...</p>
+                    </div>
+                </div>
+            </div>`,
+        category: 'Grid Systems',
+        content: `
+        <div class="flex justify-center items-center gap-4 my-16 w-[50%] mx-auto">
+                    <div>
+                      <p class="text-2xl mb-4">SMALL, STYLISH AND SMART</p>
 
-        editor.DomComponents.addType('test-component', {
-    model: {
-        defaults: {
-            testprop: '12345',
-            url: 'https://jsonplaceholder.typicode.com/posts/1'
-        },
-        init() {
-            console.log('Local hook: model.init', this.attributes.testprop);
-            fetch(this.attributes.url)
-                .then(response => response.json())
-                .then(commits => {
-                    this.set('testprop', 'Test');
-                    console.log(this.attributes.testprop);
-                });
-            this.listenTo(this, 'change:testprop', this.handlePropChange);
-            // Here we can listen global hooks with editor.on('...')
-        },
-        updated(property, value, prevValue) {
-            console.log('Local hook: model.updated',
-                'property', property, 'value', value, 'prevValue', prevValue);
-        },
-        removed() {
-            console.log('Local hook: model.removed');
-        },
-        handlePropChange() {
-             let prop = this.get('testprop');
-            // Here inside view it is getting the old value. of "testprop" i.e '12345' but not 
-            //the new value 
-            //which is being fetched from server in the init() of model.
-            let comp1 = '<div>' +
-                '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png" />' +
-                '<span title="foo">' + prop + '</span>' +  '</div>';
+                      <p class="text-sm">
+                        This stylish smartwatch is the first of its kind from
+                        Garmin with an incredibly small, 34 mm watch case and a
+                        stylish patterned lens. Just tap or twist your wrist to
+                        reveal the bright touchscreen display.
+                      </p>
+                    </div>
+                    <div>
+                      <p class="text-2xl mb-4">CLASSIC OR SPORT STYLES</p>
+                      <p class="text-sm">
+                        Choose from classic and sport designs with a variety of
+                        color, metal and interchangeable band options —
+                        including leather and silicone — so you can find the
+                        perfect piece to fit your look.
+                      </p>
+                    </div>
+                  </div>
+        `,
+    });
 
-                const component = editor.addComponents(comp1);
-            return component
-        }
-    },
-    view: {
-        init() {
-            console.log('Local hook: view.init');
-        },
+    editor.BlockManager.add('product-grid', {
+        label: `
+            <div style="text-align: center; padding: 10px;">
+                <strong>Product Grid</strong>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 10px;">
+                    <div>
+                        <img src="https://via.placeholder.com/150" alt="Product Image" style="width: 100%; height: auto;">
+                        <p style="font-size: 16px; font-weight: bold; margin-top: 10px; margin-bottom: 5px;">Product Name</p>
+                        <p style="font-size: 12px;">Product description goes here.</p>
+                    </div>
+                    <div>
+                        <img src="https://via.placeholder.com/150" alt="Product Image" style="width: 100%; height: auto;">
+                        <p style="font-size: 16px; font-weight: bold; margin-top: 10px; margin-bottom: 5px;">Product Name</p>
+                        <p style="font-size: 12px;">Product description goes here.</p>
+                    </div>
+                    <div>
+                        <img src="https://via.placeholder.com/150" alt="Product Image" style="width: 100%; height: auto;">
+                        <p style="font-size: 16px; font-weight: bold; margin-top: 10px; margin-bottom: 5px;">Product Name</p>
+                        <p style="font-size: 12px;">Product description goes here.</p>
+                    </div>
+                </div>
+            </div>`,
+        category: 'Grid Systems',
+        content: `
+            <div class="grid grid-cols-3 px-[6vw] gap-4 gap-y-16 pt-12">
+                <div>
+                    <img src="https://via.placeholder.com/300" alt="Product Image" />
+                    <p class="text-xl font-medium mt-6 mb-4">Product Name 1</p>
+                    <p class="mb-4 text-sm text-left">This is a description for product 1.</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300" alt="Product Image" />
+                    <p class="text-xl font-medium mt-6 mb-4">Product Name 2</p>
+                    <p class="mb-4 text-sm text-left">This is a description for product 2.</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300" alt="Product Image" />
+                    <p class="text-xl font-medium mt-6 mb-4">Product Name 3</p>
+                    <p class="mb-4 text-sm text-left">This is a description for product 3.</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300" alt="Product Image" />
+                    <p class="text-xl font-medium mt-6 mb-4">Product Name 1</p>
+                    <p class="mb-4 text-sm text-left">This is a description for product 1.</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300" alt="Product Image" />
+                    <p class="text-xl font-medium mt-6 mb-4">Product Name 2</p>
+                    <p class="mb-4 text-sm text-left">This is a description for product 2.</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300" alt="Product Image" />
+                    <p class="text-xl font-medium mt-6 mb-4">Product Name 3</p>
+                    <p class="mb-4 text-sm text-left">This is a description for product 3.</p>
+                </div>
+            </div>
+        `,
+    });
+
+    editor.BlockManager.add('two-cards-common-grid', {
+        label: `
+            <div style="text-align: center; padding: 10px;">
+                <strong>2 Cards Common Grid</strong>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                    <div style="background-color: #FFF; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 10px;">
+                        <img src="https://via.placeholder.com/300" style="width: 100%; height: auto;" alt="Card Image" />
+                        <p style="font-size: 18px; text-align: center; padding-top: 10px;">
+                            Sample description for card 1.
+                        </p>
+                        <p style="font-size: 14px; text-align: right;">FOLLOW @GARMINWELLNESS</p>
+                    </div>
+                    <div style="background-color: #FFF; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 10px;">
+                        <img src="https://via.placeholder.com/300" style="width: 100%; height: auto;" alt="Card Image" />
+                        <p style="font-size: 18px; text-align: center; padding-top: 10px;">
+                            Sample description for card 2.
+                        </p>
+                        <p style="font-size: 14px; text-align: right;">FOLLOW @GARMINWELLNESS</p>
+                    </div>
+                </div>
+            </div>`,
+        category: 'Grid Systems',
+        content: `
+            <div class="bg-[#F2F2F2]">
+                <!-- 2 Cards Common -->
+                <div class="grid grid-cols-2 px-[3%] gap-4 pt-12">
+                    <div class="bg-white shadow-lg">
+                        <img class="w-full" 
+                            src="https://res.garmin.com/gdc/Product_Pages/LEARN-MORE-CARDS/GARWELLNESS-BOX-D.jpg" 
+                            alt="" />
+                        <div class="px-2">
+                            <p class="text-center text-3xl pt-5 pb-4">
+                                Check out the place on Instagram® where mind and body connect.
+                            </p>
+                            <p class="text-end text-lg pb-5">FOLLOW @GARMINWELLNESS</p>
+                        </div>
+                    </div>
+                    <div class="bg-white shadow-lg">
+                        <img class="w-full" 
+                            src="https://res.garmin.com/gdc/Product_Pages/LEARN-MORE-CARDS/WOMENS-BOX-D.jpg" 
+                            alt="" />
+                        <div class="px-2">
+                            <p class="text-center text-3xl pt-5 pb-4">
+                                Find the perfect watch for you, made with features just for women.
+                            </p>
+                            <p class="text-end text-lg pb-5">FOLLOW @GARMINWELLNESS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-[12%] space-y-1 pt-20 pb-16">
+                    <p class="text-xs">
+                        <sup>1</sup> Requires initial setup through Garmin Connect or Garmin Express™
+                    </p>
+                    <p class="text-xs">
+                        <sup>2</sup> When paired with a compatible smartphone
+                    </p>
+                    <p class="text-xs">
+                        <sup>3</sup> Activity tracking accuracy; sleep tracking available when paired with your compatible smartphone
+                    </p>
+                    <p class="text-xs">
+                        <sup>4</sup> This is not a medical device and is not intended for use in the diagnosis or monitoring of any medical condition; see Garmin.com/ataccuracy. Pulse Ox not available in all countries.
+                    </p>
+                    <p class="text-xs">
+                        <sup>5</sup> For safety and tracking features requirements and limitations, see Garmin.com/safety
+                    </p>
+                    <div class="text-xs space-y-6 pt-5">
+                        <p>Android is a trademark of Google LLC.</p>
+                        <div class="flex gap-6">
+                            <img 
+                                src="https://static.garmincdn.com/en_US/logo/firstbeat.png" 
+                                alt="Firstbeat Logo" />
+                            <img 
+                                src="http://static.garmincdn.com/en/logo/2020/ant.gif" 
+                                alt="ANT Logo" />
+                        </div>
+                        <p>
+                            Engineering enhancements are ongoing and may not be reflected in the pictures, videos and specifications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `,
+    });
+
+    editor.BlockManager.add('specs', {
+        label: `
+            <div style="text-align: center; padding: 10px;">
+                <strong>Specs</strong>
+           
+            </div>`,
+        category: 'Grid Systems',
+        content: `
+        <div class="max-w-6xl grid grid-cols-10 mx-auto">
+      <div class="col-span-7 px-[10%]">
+
+        <div class="text-xs">
+            <table class="w-full border-collapse">
+                <tbody>
+                  <tr class=" text-black border-b  border-gray-300">
+                    <td colspan="2" class="p-2">
+                      <h3 class="text-lg font-bold">What You'll Love</h3>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      class="bg-[#f2f2f2] uppercase  font-medium text-xs text-left p-4 border-b border-gray-300"
+                    >
+                    <span>Battery life (smartwatch mode)</span>
+                      
+                    </th>
+                    <td class="p-4 border-b text-center border-gray-300">                    <span>Battery life (smartwatch mode)</span>
+</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      class="bg-[#f2f2f2] uppercase  font-medium text-xs text-[#106fad]  text-left p-4 border-b border-gray-300"
+                    >
+                    <span>Battery life (smartwatch mode)</span>
+
+                    </th>
+                    <td class="p-4 border-b text-center border-gray-300">                    <span>Battery life (smartwatch mode)</span>
+</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      class="bg-[#f2f2f2] uppercase  font-medium text-xs  text-left p-4 border-b border-gray-300"
+                    >
+                    <span>Battery life (smartwatch mode)</span>
+                    </th>
+                    <td class="p-4 border-b text-center border-gray-300">                    <span>Battery life (smartwatch mode)</span>
+</td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      class="bg-[#f2f2f2] uppercase  font-medium text-xs text-left p-4 border-b border-gray-300"
+                    >
+                    <span>Battery life (smartwatch mode)</span>
+                    </th>
+                    <td class="p-4 border-b text-center border-gray-300">
+                      <span class="text-green-500  font-semibold">                    <span>Battery life (smartwatch mode)</span>
+</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th
+                      scope="row"
+                      class="bg-[#f2f2f2] text-[#106fad] uppercase  font-medium text-xs text-left p-4"
+                    >
+                     
+                    <span>Battery life (smartwatch mode)</span>
+                    </th>
+                    <td class="p-4 text-center">                    <span>Battery life (smartwatch mode)</span>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+        </div>
        
-    },
-});
+      </div>
+      <div class="col-span-3">
+        <div class="w-1/2 mx-auto mt-6 h-[100px] my-auto">
+            <div class="w-12 h-20 mx-auto mt-10 my-auto ">
+              <svg
+              class="mt-5"
+                id="manual_Layer_1"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0"
+                y="0"
+                viewBox="0 0 100 100"
+                xml:space="preserve"
+              >
+                <g id="Audiobooks_1_">
+                  <defs>
+                    <path id="manual_SVGID_21_" d="M0 3.2h100v93.5H0z"></path>
+                  </defs>
+                  <clipPath id="manual_SVGID_2_">
+                    <use xlink:href="#manual_SVGID_21_" overflow="visible"></use>
+                  </clipPath>
+                  <g clip-path="url(#manual_SVGID_2_)">
+                    <defs>
+                      <path id="manual_SVGID_23_" d="M0 3.2h100v93.5H0z"></path>
+                    </defs>
+                    <clipPath id="manual_SVGID_4_">
+                      <use xlink:href="#manual_SVGID_23_" overflow="visible"></use>
+                    </clipPath>
+                    <path
+                      d="M50 17.6v67m39.8-71.3h8.8v69.1H72.1c-8.8 0-15.5 4.3-15.5 13H43.4c0-8.6-6.6-13-15.5-13H1.4V13.3h8.8m39.9 73.4c0-8.6 4.4-13 13.2-13h26.5V4.6H63.3C54.4 4.6 50 9 50 17.6c0-8.6-4.4-13-13.3-13H10.2v69.1h26.5c8.9.1 13.4 4.4 13.4 13z"
+                      clip-path="url(#manual_SVGID_4_)"
+                      fill="none"
+                      stroke="#231f20"
+                      stroke-width="2.778"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+              <p class="mt-2">Manuals</p>
+            </div>
 
-// A block for the custom component
-editor.BlockManager.add('test-component', {
-    label: 'Test Component',
-    content: `<div data-gjs-type="test-component"></div>`,
-});
+        </div>
+        <div class="w-1/2 mx-auto mt-6 h-[100px] my-auto">
+            <div class="w-12 h-20 mx-auto mt-10 my-auto ">
+              <svg
+              class="mt-5"
+                id="manual_Layer_1"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0"
+                y="0"
+                viewBox="0 0 100 100"
+                xml:space="preserve"
+              >
+                <g id="Audiobooks_1_">
+                  <defs>
+                    <path id="manual_SVGID_21_" d="M0 3.2h100v93.5H0z"></path>
+                  </defs>
+                  <clipPath id="manual_SVGID_2_">
+                    <use xlink:href="#manual_SVGID_21_" overflow="visible"></use>
+                  </clipPath>
+                  <g clip-path="url(#manual_SVGID_2_)">
+                    <defs>
+                      <path id="manual_SVGID_23_" d="M0 3.2h100v93.5H0z"></path>
+                    </defs>
+                    <clipPath id="manual_SVGID_4_">
+                      <use xlink:href="#manual_SVGID_23_" overflow="visible"></use>
+                    </clipPath>
+                    <path
+                      d="M50 17.6v67m39.8-71.3h8.8v69.1H72.1c-8.8 0-15.5 4.3-15.5 13H43.4c0-8.6-6.6-13-15.5-13H1.4V13.3h8.8m39.9 73.4c0-8.6 4.4-13 13.2-13h26.5V4.6H63.3C54.4 4.6 50 9 50 17.6c0-8.6-4.4-13-13.3-13H10.2v69.1h26.5c8.9.1 13.4 4.4 13.4 13z"
+                      clip-path="url(#manual_SVGID_4_)"
+                      fill="none"
+                      stroke="#231f20"
+                      stroke-width="2.778"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+              <p class="mt-2">Manuals</p>
+            </div>
+
+        </div>
+        <div class="w-1/2 mx-auto mt-6 h-[100px] my-auto">
+            <div class="w-12 h-20 mx-auto mt-10 my-auto ">
+              <svg
+              class="mt-5"
+                id="manual_Layer_1"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0"
+                y="0"
+                viewBox="0 0 100 100"
+                xml:space="preserve"
+              >
+                <g id="Audiobooks_1_">
+                  <defs>
+                    <path id="manual_SVGID_21_" d="M0 3.2h100v93.5H0z"></path>
+                  </defs>
+                  <clipPath id="manual_SVGID_2_">
+                    <use xlink:href="#manual_SVGID_21_" overflow="visible"></use>
+                  </clipPath>
+                  <g clip-path="url(#manual_SVGID_2_)">
+                    <defs>
+                      <path id="manual_SVGID_23_" d="M0 3.2h100v93.5H0z"></path>
+                    </defs>
+                    <clipPath id="manual_SVGID_4_">
+                      <use xlink:href="#manual_SVGID_23_" overflow="visible"></use>
+                    </clipPath>
+                    <path
+                      d="M50 17.6v67m39.8-71.3h8.8v69.1H72.1c-8.8 0-15.5 4.3-15.5 13H43.4c0-8.6-6.6-13-15.5-13H1.4V13.3h8.8m39.9 73.4c0-8.6 4.4-13 13.2-13h26.5V4.6H63.3C54.4 4.6 50 9 50 17.6c0-8.6-4.4-13-13.3-13H10.2v69.1h26.5c8.9.1 13.4 4.4 13.4 13z"
+                      clip-path="url(#manual_SVGID_4_)"
+                      fill="none"
+                      stroke="#231f20"
+                      stroke-width="2.778"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="10"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+              <p class="mt-2">Manuals</p>
+            </div>
+
+        </div>
+      </div>
+    </div>
+        `,
+    });
+
     </script>
 </body>
 
