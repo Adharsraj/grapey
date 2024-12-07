@@ -1,78 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Customizable Button & Content</title>
-    <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
+    <link
+      href="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/grapesjs"></script>
     <script src="https://unpkg.com/grapesjs-tailwind"></script>
     <style>
-        body,
-        html {
-            margin: 0;
-            height: 100%;
-        }
+      body,
+      html {
+        margin: 0;
+        height: 100%;
+      }
 
-        /* Adjust block preview in block manager */
-        .gjs-block {
-            padding: 0 !important;
-            width: 100% !important;
-            min-height: auto !important;
-        }
+      /* Adjust block preview in block manager */
+      .gjs-block {
+        padding: 0 !important;
+        width: 100% !important;
+        min-height: auto !important;
+      }
 
-        .gjs-block svg {
-            width: 100%;
-        }
+      .gjs-block svg {
+        width: 100%;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="gjs"></div>
     <script>
-        // Create a GrapesJS plugin for adding the Oswald font
-        grapesjs.plugins.add('grapesjs-oswald-font', (editor) => {
-            const fontLink = 'https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap';
+      // Create a GrapesJS plugin for adding the Oswald font
+      grapesjs.plugins.add("grapesjs-oswald-font", (editor) => {
+        const fontLink =
+          "https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap";
 
-            // Inject the font into the canvas styles
-            editor.on('load', () => {
-                const canvasStyles = editor.Canvas.getDocument().head.querySelectorAll('style, link');
-                const fontExists = Array.from(canvasStyles).some((style) =>
-                    style.href?.includes('fonts.googleapis.com')
-                );
+        // Inject the font into the canvas styles
+        editor.on("load", () => {
+          const canvasStyles =
+            editor.Canvas.getDocument().head.querySelectorAll("style, link");
+          const fontExists = Array.from(canvasStyles).some((style) =>
+            style.href?.includes("fonts.googleapis.com")
+          );
 
-                if (!fontExists) {
-                    const linkEl = document.createElement('link');
-                    linkEl.rel = 'stylesheet';
-                    linkEl.href = fontLink;
-                    editor.Canvas.getDocument().head.appendChild(linkEl);
-                }
-            });
+          if (!fontExists) {
+            const linkEl = document.createElement("link");
+            linkEl.rel = "stylesheet";
+            linkEl.href = fontLink;
+            editor.Canvas.getDocument().head.appendChild(linkEl);
+          }
         });
+      });
 
-        // Initialize GrapesJS
-        const editor = grapesjs.init({
-            container: '#gjs',
-            height: '100%',
-            fromElement: true,
-            storageManager: false,
-            plugins: ['grapesjs-tailwind', 'grapesjs-oswald-font'],
-            canvas: {
-                styles: [
-                    'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css',
-                ],
-            },
-        });
+      // Initialize GrapesJS
+      const editor = grapesjs.init({
+        container: "#gjs",
+        height: "100%",
+        fromElement: true,
+        storageManager: false,
+        plugins: ["grapesjs-tailwind", "grapesjs-oswald-font"],
+        canvas: {
+          styles: [
+            "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css",
+          ],
+        },
+      });
 
-        // Add a block with an image, title, and description
-        editor.BlockManager.add('custom-content-block', {
-            label: `
+      // Add a block with an image, title, and description
+      editor.BlockManager.add("custom-content-block", {
+        label: `
                 <div style="text-align: center;">
                     <img src="https://via.placeholder.com/150?text=Content+Preview" alt="Content Preview" style="max-width: 100%; height: auto;">
                 </div>`,
-            category: 'Buttons', // Or another category if preferred
-            content: `
+        category: "Buttons", // Or another category if preferred
+        content: `
                 <div class="w-full text-center font-oswald">
                     <img class="w-full" src="https://via.placeholder.com/300" alt="img" />
                     <p class="pt-12 pb-5 w-[70%] mx-auto text-center text-3xl font-oswald">
@@ -82,9 +86,9 @@
                         You haven’t seen a smartwatch this small that can do this much. With a flick of your wrist, the stylish patterned lens reveals a bright touchscreen display, and when you’re done, the display disappears.
                     </p>
                 </div>`,
-        });
+      });
 
-        editor.BlockManager.add('six-item-grid', {
+      editor.BlockManager.add("six-item-grid", {
         label: `
             <div style="text-align: center; padding: 10px;">
                 <strong>6-Item Grid</strong>
@@ -97,50 +101,50 @@
                     <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Walking.svg" style="width: 40px; height: 40px;" alt="" />
                 </div>
             </div>`,
-        category: 'Grid Systems',
+        category: "Grid Systems",
         content: `
-            <div class="grid md:grid-cols-3 lg:grid-cols-6 w-[80%] mx-auto gap-4 pt-12">
-                <div class="flex flex-col justify-center items-center text-center gap-2">
-                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Discrete-Display.svg" alt="" />
-                    <p class="text-sm">
-                        Stylish patterned lens or smart touchscreen? Why not both?
-                    </p>
-                </div>
-                <div class="flex flex-col justify-center items-center text-center gap-2">
-                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Battery_Life.svg" alt="" />
-                    <p class="text-sm">
-                        Don’t put life on pause. Go longer between charges with up to 5 days of battery life.
-                    </p>
-                </div>
-                <div class="flex flex-col justify-center items-center text-center gap-2">
-                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Health_Monitoring.svg" alt="" />
-                    <p class="text-sm">
-                        One small, fashionable smartwatch to keep track of your important health stats.
-                    </p>
-                </div>
-                <div class="flex flex-col justify-center items-center text-center gap-2">
-                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Smart_notifications.svg" alt="" />
-                    <p class="text-sm">
-                        One small, fashionable smartwatch to keep track of your important health stats.
-                    </p>
-                </div>
-                <div class="flex flex-col justify-center items-center text-center gap-2">
-                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Health_And_Fitness_Tracking.svg" alt="" />
-                    <p class="text-sm">
-                        Yes, this watch tracks your steps, sleep, stress and energy levels.
-                    </p>
-                </div>
-                <div class="flex flex-col justify-center items-center text-center gap-2">
-                    <img class="h-12" src="https://res.garmin.com/gdc/Product_Pages/ICONS/Walking.svg" alt="" />
-                    <p class="text-sm">
-                        One small, fashionable smartwatch to keep track of your important health stats.
-                    </p>
-                </div>
-            </div>
+              <div class="flex flex-wrap justify-between gap-4 mx-auto pt-12">
+    <div class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]">
+      <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Discrete-Display.svg" alt="" class="h-12"/>
+      <p class="text-sm">
+        Stylish patterned lens or smart touchscreen? Why not both?
+      </p>
+    </div>
+    <div class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]">
+      <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Battery_Life.svg" alt="" class="h-12"/>
+      <p class="text-sm">
+        Don’t put life on pause. Go longer between charges with up to 5 days of battery life.
+      </p>
+    </div>
+    <div class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]">
+      <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Health_Monitoring.svg" alt="" class="h-12"/>
+      <p class="text-sm">
+        One small, fashionable smartwatch to keep track of your important health stats.
+      </p>
+    </div>
+    <div class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]">
+      <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Smart_notifications.svg" alt="" class="h-12"/>
+      <p class="text-sm">
+        One small, fashionable smartwatch to keep track of your important health stats.
+      </p>
+    </div>
+    <div class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]">
+      <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Health_And_Fitness_Tracking.svg" alt="" class="h-12"/>
+      <p class="text-sm">
+        Yes, this watch tracks your steps, sleep, stress and energy levels.
+      </p>
+    </div>
+    <div class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]">
+      <img src="https://res.garmin.com/gdc/Product_Pages/ICONS/Walking.svg" alt="" class="h-12"/>
+      <p class="text-sm">
+        One small, fashionable smartwatch to keep track of your important health stats.
+      </p>
+    </div>
+  </div>
         `,
-    });
+      });
 
-    editor.BlockManager.add('large-image', {
+      editor.BlockManager.add("large-image", {
         label: `
             <div style="text-align: center; padding: 10px;">
                 <strong>Large Image</strong>
@@ -148,7 +152,7 @@
                      style="width: 100%; height: auto; padding-top: 10px;" 
                      alt="Large Image Preview">
             </div>`,
-        category: 'Images',
+        category: "Images",
         content: `
             <div class="w-full text-center">
                 <img class="pt-16" 
@@ -156,8 +160,8 @@
                      alt="Large Image">
             </div>
         `,
-    });
-    editor.BlockManager.add('three-item-grid', {
+      });
+      editor.BlockManager.add("three-item-grid", {
         label: `
             <div style="text-align: center; padding: 10px;">
                 <strong>3-Item Grid</strong>
@@ -177,7 +181,7 @@
                     </div>
                 </div>
             </div>`,
-        category: 'Grid Systems',
+        category: "Grid Systems",
         content: `
         <div class="flex justify-center items-center gap-4 my-16 w-[50%] mx-auto">
                     <div>
@@ -201,9 +205,9 @@
                     </div>
                   </div>
         `,
-    });
+      });
 
-    editor.BlockManager.add('product-grid', {
+      editor.BlockManager.add("product-grid", {
         label: `
             <div style="text-align: center; padding: 10px;">
                 <strong>Product Grid</strong>
@@ -225,7 +229,7 @@
                     </div>
                 </div>
             </div>`,
-        category: 'Grid Systems',
+        category: "Grid Systems",
         content: `
             <div class="grid grid-cols-3 px-[6vw] gap-4 gap-y-16 pt-12">
                 <div>
@@ -260,9 +264,9 @@
                 </div>
             </div>
         `,
-    });
+      });
 
-    editor.BlockManager.add('two-cards-common-grid', {
+      editor.BlockManager.add("two-cards-common-grid", {
         label: `
             <div style="text-align: center; padding: 10px;">
                 <strong>2 Cards Common Grid</strong>
@@ -283,7 +287,7 @@
                     </div>
                 </div>
             </div>`,
-        category: 'Grid Systems',
+        category: "Grid Systems",
         content: `
             <div class="bg-[#F2F2F2]">
                 <!-- 2 Cards Common -->
@@ -344,15 +348,15 @@
                 </div>
             </div>
         `,
-    });
+      });
 
-    editor.BlockManager.add('specs', {
+      editor.BlockManager.add("specs", {
         label: `
             <div style="text-align: center; padding: 10px;">
                 <strong>Specs</strong>
            
             </div>`,
-        category: 'Grid Systems',
+        category: "Grid Systems",
         content: `
         <div class="max-w-6xl grid grid-cols-10 mx-auto">
       <div class="col-span-7 px-[10%]">
@@ -405,8 +409,13 @@
                     <span>Battery life (smartwatch mode)</span>
                     </th>
                     <td class="p-4 border-b text-center border-gray-300">
-                      <span class="text-green-500  font-semibold">                    <span>Battery life (smartwatch mode)</span>
-</span>
+                      <span class="text-green-500  font-semibold">              
+                              <span>Battery life (smartwatch mode)</span>
+
+
+
+
+                              </span>
                     </td>
                   </tr>
                   <tr>
@@ -562,9 +571,7 @@
       </div>
     </div>
         `,
-    });
-
+      });
     </script>
-</body>
-
+  </body>
 </html>
