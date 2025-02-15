@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Customizable Button & Content</title>
+    <title>Customizable Button & Content with Auto-Save</title>
     <link
       href="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
       rel="stylesheet"
@@ -79,12 +79,10 @@
       <button id="autoSaveToggle" class="button">Enable Auto-Save</button>
     </div>
     <script>
-      // Create a GrapesJS plugin for adding the Oswald font
       grapesjs.plugins.add("grapesjs-oswald-font", (editor) => {
         const fontLink =
           "https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap";
 
-        // Inject the font into the canvas styles
         editor.on("load", () => {
           const canvasStyles =
             editor.Canvas.getDocument().head.querySelectorAll("style, link");
@@ -101,12 +99,16 @@
         });
       });
 
-      // Initialize GrapesJS
       const editor = grapesjs.init({
         container: "#gjs",
         height: "100%",
         fromElement: true,
-        storageManager: false,
+        storageManager: {
+          type: 'local',
+          autosave: false,
+          autoload: true,
+          stepsBeforeSave: 1
+        },
         plugins: ["grapesjs-tailwind", "grapesjs-oswald-font"],
         canvas: {
           styles: [
@@ -115,7 +117,6 @@
         },
       });
 
-      // Add a block with an image, title, and description
       editor.BlockManager.add("custom-content-block", {
         label: `
                 <div style="text-align: center;">
@@ -129,12 +130,41 @@
                         CLASSIC ENOUGH TO MAKE A STATEMENT. MODERN ENOUGH TO KEEP YOU CONNECTED.
                     </p>
                     <p class="w-[70%] mx-auto text-center text-lg font-oswald">
-                        You haven’t seen a smartwatch this small that can do this much. With a flick of your wrist, the stylish patterned lens reveals a bright touchscreen display, and when you’re done, the display disappears.
+                        You haven't seen a smartwatch this small that can do this much. With a flick of your wrist, the stylish patterned lens reveals a bright touchscreen display, and when you're done, the display disappears.
                     </p>
                 </div>`,
       });
 
-     
+      const saveButton = document.getElementById('saveButton');
+      const autoSaveToggle = document.getElementById('autoSaveToggle');
+      let autoSaveInterval;
+
+      function saveProject() {
+        editor.store();
+        console.log('Project saved successfully!');
+      }
+
+      function toggleAutoSave() {
+        if (autoSaveToggle.classList.contains('active')) {
+          clearInterval(autoSaveInterval);
+          autoSaveToggle.classList.remove('active');
+          autoSaveToggle.textContent = 'Enable Auto-Save';
+        } else {
+          autoSaveInterval = setInterval(saveProject, 30000); // Auto-save every 30 seconds
+          autoSaveToggle.classList.add('active');
+          autoSaveToggle.textContent = 'Disable Auto-Save';
+        }
+      }
+
+      saveButton.addEventListener('click', saveProject);
+      autoSaveToggle.addEventListener('click', toggleAutoSave);
+
+      editor.on('load', () => {
+        const savedProject = editor.load();
+        if (savedProject) {
+          console.log('Project loaded successfully!');
+        }
+      });
     </script>
   </body>
 </html>
