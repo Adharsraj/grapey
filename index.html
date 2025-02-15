@@ -88,6 +88,909 @@
                 </div>`,
       });
 
+           // Add a block with an image, title, and description
+           editor.BlockManager.add("FOOTER-PRODUCT-OVERVIEW(DESIGN 1)", {
+        label: `
+                <div style="text-align: center;">
+                    <img src="https://via.placeholder.com/150?text=Content+Preview" alt="Content Preview" style="max-width: 100%; height: auto;">
+                </div>`,
+        category: "FOOTERS", // Or another category if preferred
+        content: `
+                <body id="iuih">
+    <div class="relative w-full mx-auto ">
+      <!-- Hidden Checkbox for Toggling -->
+      <input type="checkbox" id="playToggle" class="hidden" />
+
+      <!-- Image Banner -->
+      <div class="relative h-[390px]" id="imageBanner">
+        <label
+          for="playToggle"
+          class="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-30"
+        >
+          <!-- Play Button -->
+          <svg
+            class="w-16 h-16 text-white"
+            role="img"
+            aria-label="Play"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 144 144"
+          >
+            <path d="M121.5 72l-79 45.2V26.8l79 45.2z"></path>
+            <path
+              d="M72 143.3C32.7 143.3.7 111.3.7 72S32.7.7 72 .7s71.3 32 71.3 71.3-32 71.3-71.3 71.3zm0-132.6c-33.8 0-61.3 27.5-61.3 61.3s27.5 61.3 61.3 61.3 61.3-27.5 61.3-61.3S105.8 10.7 72 10.7z"
+            ></path>
+          </svg>
+        </label>
+        <img
+          class="hidden md:block w-full h-full object-"
+          src="https://res.garmin.com/en/products/010-02746-00/g/57145-D-VID.jpg"
+          alt="Desktop Banner"
+        />
+        <img
+          class="block md:hidden w-full h-full object-cover"
+          src="https://res.garmin.com/en/products/010-02746-00/g/57145-M-VID.jpg"
+          alt="Mobile Banner"
+        />
+      </div>
+
+      <!-- Video Container -->
+      <div class="h-[350px] hidden peer-checked:block" id="videoContainer">
+        <iframe
+          src="https://www.youtube.com/embed/ZC1eqHgkP-4?autoplay=1"
+          width="100%"
+          height="350"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <!-- Toggling Between Image and Video -->
+      <style>
+        #playToggle:checked ~ #imageBanner {
+          display: none;
+        }
+        #playToggle:checked ~ #videoContainer {
+          display: block;
+        }
+      </style>
+    </div>
+
+    <div class="max-w-6xl grid grid-cols-10 mx-auto"></div>
+    <div class="w-full text-center font-oswald">
+      <p class="pt-12 pb-5 w-[70%] mx-auto text-center text-3xl font-oswald">
+        TRAIN BRILLIANTLY
+      </p>
+      <p class="w-[70%] mx-auto text-center font-roboto text-lg">
+        You don’t just run. You’ve moved beyond that. Which is why you need
+        Forerunner 165 — the purpose-built GPS running smartwatch that helps
+        you meet your goals with personalized adaptive training plans and a
+        bright display to light up your progress.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-between gap-4 w-[80%] mx-auto pt-12">
+      <div
+        class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+      >
+        <img
+          src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/AMOLED_Display.svg"
+          alt=""
+          class="h-12"
+        />
+        <p class="text-sm">1.2” COLORFUL AMOLED DISPLAY</p>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+      >
+        <img
+          src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Battery_Life.svg"
+          alt=""
+          class="h-12"
+        />
+        <p class="text-sm">
+          UP TO 11 DAYS OF BATTERY LIFE IN SMARTWATCH MODE
+        </p>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+      >
+        <img
+          src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/TRAINING-GUIDANCE.svg"
+          alt=""
+          class="h-12"
+        />
+        <p class="text-sm">TRAINING METRICS AND RECOVERY INSIGHTS</p>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+      >
+        <img
+          src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Preloaded_Sports_Apps.svg"
+          alt=""
+          class="h-12"
+        />
+        <p class="text-sm">25+ BUILT-IN GPS AND INDOOR SPORTS APPS</p>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+      >
+        <img
+          src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Touchscreen.svg"
+          alt=""
+          class="h-12"
+        />
+        <p class="text-sm">TOUCHSCREEN AND BUTTONS</p>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+      >
+        <img
+          src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/GPS_tracking.svg"
+          alt=""
+          class="h-12"
+        />
+        <p class="text-sm">BUILT-IN GPS FOR TIME, DISTANCE, PACE AND SPEED</p>
+      </div>
+    </div>
+    <div
+      class="w-[80%] h-[150px] my-16 flex justify-center items-center bg-black mx-auto text-white"
+    >
+      <p class="lg:text-6xl text-4xl text-center font-oswald">
+        WHAT YOU'LL LOVE
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 px-[10vw] gap-4 gap-y-16 pt-12">
+      <div>
+        <img
+          src="https://res.garmin.com/en/products/010-02863-20/g/65366-1.jpg"
+          alt="Product Image"
+        />
+        <p class="text-2xl mt-6 mb-4 font-oswald">
+          PACE, DISTANCE, HEART RATE
+        </p>
+        <p class="mb-4 text-sm text-left">
+          This easy-to-use GPS running smartwatch provides the essential
+          features you need to take your running to the next level — including
+          GPS, pace, distance and wrist-based heart rate1.
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://res.garmin.com/en/products/010-02863-20/g/65366-2.jpg"
+          alt="Product Image"
+        />
+        <p class="text-2xl mt-6 mb-4 font-oswald">DAILY SUGGESTED WORKOUTS</p>
+        <p class="mb-4 text-sm text-left">
+          Get workouts made for you. They adapt after every run to match your
+          performance and recovery as well as the races coming up in your
+          Garmin Connect™ smartphone app calendar.
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://res.garmin.com/en/products/010-02863-20/g/65366-3.jpg"
+          alt="Product Image"
+        />
+        <p class="text-2xl font-medium mt-6 mb-4">GARMIN COACH</p>
+        <p class="mb-4 text-sm text-left">
+          Get free adaptive 5K, 10K and half-marathon training plans from
+          expert coaches to help you take on a new challenge.
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://res.garmin.com/en/products/010-02863-20/g/65366-1.jpg"
+          alt="Product Image"
+        />
+        <p class="text-2xl mt-6 mb-4 font-oswald">
+          PACE, DISTANCE, HEART RATE
+        </p>
+        <p class="mb-4 text-sm text-left">
+          This easy-to-use GPS running smartwatch provides the essential
+          features you need to take your running to the next level — including
+          GPS, pace, distance and wrist-based heart rate1.
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://res.garmin.com/en/products/010-02863-20/g/65366-2.jpg"
+          alt="Product Image"
+        />
+        <p class="text-2xl mt-6 mb-4 font-oswald">DAILY SUGGESTED WORKOUTS</p>
+        <p class="mb-4 text-sm text-left">
+          Get workouts made for you. They adapt after every run to match your
+          performance and recovery as well as the races coming up in your
+          Garmin Connect™ smartphone app calendar.
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://res.garmin.com/en/products/010-02863-20/g/65366-3.jpg"
+          alt="Product Image"
+        />
+        <p class="text-2xl font-medium mt-6 mb-4">GARMIN COACH</p>
+        <p class="mb-4 text-sm text-left">
+          Get free adaptive 5K, 10K and half-marathon training plans from
+          expert coaches to help you take on a new challenge.
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://res.garmin.com/en/products/010-02863-20/g/65366-3.jpg"
+          alt="Product Image"
+        />
+        <p class="text-2xl font-medium mt-6 mb-4">GARMIN COACH</p>
+        <p class="mb-4 text-sm text-left">
+          Get free adaptive 5K, 10K and half-marathon training plans from
+          expert coaches to help you take on a new challenge.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="w-[80%] h-[150px] my-16 flex justify-center items-center bg-black mx-auto text-white"
+    >
+      <p class="lg:text-6xl text-4xl text-center font-oswald">
+        GO AHEAD, SIGN UP FOR THAT RACE.
+      </p>
+    </div>
+    <div>
+      <div class="w-[80%] mx-auto pt-">
+        <p class="text-3xl font-oswald">PLAN</p>
+
+        <p class="h-[1px] bg-black"></p>
+      </div>
+      <div
+        class="flex flex-wrap justify-between items-start gap-4 w-[85%] mx-auto pt-12"
+      >
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Battery_Life.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            LONG BATTERY LIFE
+          </p>
+          <p class="text-sm">
+            With up to 11 days in smartwatch mode and up to 19 hours in GPS
+            mode, you’ll get a more complete picture of your health and
+            training.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/recovery-time.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">RECOVERY TIME</p>
+          <p class="text-sm">
+            Know how long to recover before your next high-effort workout
+            based on your latest training as well as overall stress, sleep and
+            daily activities outside of workouts.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/sleep.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            SLEEP MONITORING AND SLEEP SCORE
+          </p>
+          <p class="text-sm">
+            Understand how your body is recovering with sleep score, get a
+            breakdown of your sleep stages, and gain detailed insights for
+            improved sleep quality1.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/BodyBattery.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            BODY BATTERY™ ENERGY MONITORING
+          </p>
+          <p class="text-sm">
+            With up to 11 days in smartwatch mode and up to 19 hours in GPS
+            mode, you’ll get a more complete picture of your health and
+            training.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/COMPASS.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">COURSES</p>
+          <p class="text-sm">
+            Create or find existing courses in the Garmin Connect app and from
+            favorite third-party platforms, and sync directly to your watch.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Race-Predictor.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">RACE PREDICTOR</p>
+          <p class="text-sm">
+            Get an estimate of what your pace could be for a 5K, 10K,
+            half-marathon and even a marathon.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Nap-Detection.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">NAP DETECTION</p>
+          <p class="text-sm">
+            Automatically track or log your naps to see how they benefit your
+            body and what their ideal time and duration should be.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/MCT.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            WOMEN’S HEALTH TRACKING
+          </p>
+          <p class="text-sm">
+            Track and log your menstrual cycle or pregnancy, and get exercise
+            and nutrition education.
+          </p>
+        </div>
+        <div class="lg:w-[16%] hidden md:flex"></div>
+        <div class="lg:w-[16%] hidden md:flex"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="w-[80%] mx-auto pt-">
+        <p class="text-3xl font-oswald">PREPARE</p>
+
+        <p class="h-[1px] bg-black"></p>
+      </div>
+
+      <div
+        class="flex flex-wrap justify-between items-start gap-4 w-[85%] mx-auto pt-12"
+      >
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/WristHeartRate.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            WRIST-BASED HEART RATE
+          </p>
+          <p class="text-sm">
+            With up to 11 days in smartwatch mode and up to 19 hours in GPS
+            mode, you’ll get a more complete picture of your health and
+            training.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/wrist-based-running-dynamics.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            WRIST-BASED RUNNING DYNAMICS
+          </p>
+          <p class="text-sm">
+            Know how long to recover before your next high-effort workout
+            based on your latest training as well as overall stress, sleep and
+            daily activities outside of workouts.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/VO2_Max.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">VO2 MAX</p>
+          <p class="text-sm">
+            See your current fitness level, and track changes over time to set
+            goals, evaluate progress and more.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/intensity-minutes.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            INTENSITY MINUTES
+          </p>
+          <p class="text-sm">
+            With up to 11 days in smartwatch mode and up to 19 hours in GPS
+            mode, you’ll get a more complete picture of your health and
+            training.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/SPEAKER.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">AUDIO PROMPTS</p>
+          <p class="text-sm">
+            Create or find existing courses in the Garmin Connect app and from
+            favorite third-party platforms, and sync directly to your watch.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Health_And_Fitness_Tracking.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">STRESS TRACKING</p>
+          <p class="text-sm">
+            Get an estimate of what your pace could be for a 5K, 10K,
+            half-marathon and even a marathon.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Pulseox.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">PULSE OX SENSOR</p>
+          <p class="text-sm">
+            Automatically track or log your naps to see how they benefit your
+            body and what their ideal time and duration should be.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/cross-training.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">CROSS TRAINING</p>
+          <p class="text-sm">
+            Track and log your menstrual cycle or pregnancy, and get exercise
+            and nutrition education.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/health-snapshot.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">HEALTH SNAPSHOT</p>
+          <p class="text-sm">
+            Log a 2-minute session to record key health stats, then generate a
+            report to share with your health care provider.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/track-fitness.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            ACTIVITY TRACKING
+          </p>
+          <p class="text-sm">
+            Keep tabs on your daily steps, calories burned, floors climbed and
+            more from your wrist1.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Fitness-Age.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">FITNESS AGE</p>
+          <p class="text-sm">
+            Estimate how fit you are compared to your actual age.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="w-[80%] mx-auto pt-">
+        <p class="text-3xl font-oswald">PERFORM</p>
+
+        <p class="h-[1px] bg-black"></p>
+      </div>
+
+      <div
+        class="flex flex-wrap justify-between items-start gap-4 w-[85%] mx-auto pt-12"
+      >
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/GPS_tracking.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">BUILT-IN GNSS</p>
+          <p class="text-sm">
+            Our built-in sensors connect to multiple satellite systems so you
+            track where you run, and get accurate stats, including distance
+            and pace.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/wrist-based-running-dynamics.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            WRIST-BASED RUNNING POWER
+          </p>
+          <p class="text-sm">
+            See how much power you’re applying to the trail or road so you can
+            manage effort and fine-tune training.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Preloaded_Sports_Apps.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            BUILT-IN SPORTS APPS
+          </p>
+          <p class="text-sm">
+            Tap in to 25+ built-in activities, including cycling, open-water
+            swimming, strength training and more.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/track-running.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">TRACK RUNNING</p>
+          <p class="text-sm">
+            Record accurate lap distances, and see your distances in meters.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Dynamic_PacePro.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">PACEPRO™ FEATURE</p>
+          <p class="text-sm">
+            Plan race-day strategy with GPS-based pace guidance for a selected
+            course or distance.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="w-[80%] mx-auto pt-">
+        <p class="text-3xl font-oswald">CONNECT</p>
+
+        <p class="h-[1px] bg-black"></p>
+      </div>
+
+      <div
+        class="flex flex-wrap justify-between items-start gap-4 w-[85%] mx-auto pt-12"
+      >
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/assistance.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            SAFETY AND TRACKING
+          </p>
+          <p class="text-sm">
+            If your watch senses that an incident occurred, it will send a
+            message with your live location3. Or if you feel unsafe, you can
+            do it manually.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Garmin_Pay.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            GARMIN PAY™ CONTACTLESS PAYMENTS
+          </p>
+          <p class="text-sm">
+            Breeze through checkout lines or transit systems with
+            participating providers.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Messaging.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            SMART NOTIFICATIONS
+          </p>
+          <p class="text-sm">
+            Receive emails, texts and alerts on your watch when paired with
+            your iPhone® or Android™ smartphone.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/live-tracking.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            LIVETRACK FEATURE
+          </p>
+          <p class="text-sm">
+            Friends and family can follow your real-time location3 and view
+            preplanned courses.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Garmin_Connect.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            GARMIN CONNECT APP
+          </p>
+          <p class="text-sm">
+            Plan race-day strategy with GPS-based pace guidance for a selected
+            course or distance.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Garmin_Connect.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            CONNECT IQ™ STORE
+          </p>
+          <p class="text-sm">
+            Plan race-day strategy with GPS-based pace guidance for a selected
+            course or distance.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/Music.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">
+            CONTROL SMARTPHONE MUSIC
+          </p>
+          <p class="text-sm">
+            Plan race-day strategy with GPS-based pace guidance for a selected
+            course or distance.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        >
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/ICONS/exchange-photos-and-voice-messages.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm lg:text-2xl font-oswald pt-5">GARMIN SHARE</p>
+          <p class="text-sm">
+            Easily follow the same course or workout with your friends. Share
+            saved locations, courses and workouts with other nearby Garmin
+            Share compatible devices.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        ></div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 py-8 w-full sm:w-[30%] lg:w-[16%]"
+        ></div>
+      </div>
+    </div>
+
+    <div class="bg-[#F2F2F2]">
+      <!-- 2 Cards Common -->
+      <div class="grid md:grid-cols-2 px-[3%] gap-4 pt-12">
+        <div class="bg-white shadow-lg">
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/LEARN-MORE-CARDS/HALF-CONNECT-D.png"
+            alt=""
+            class="w-full"
+          />
+          <div class="px-2">
+            <p class="text-center text-3xl pt-5 pb-4 font-oswald">
+              See your stats, and track your goals in the Garmin Connect™ app.
+            </p>
+            <p class="text-end text-lg pb-5">FOLLOW @GARMINWELLNESS</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg">
+          <img
+            src="https://res.garmin.com/subcategory/71926-TMTMY/TMTMY-BOX-D.jpg"
+            alt=""
+            class="w-full"
+          />
+          <div class="px-2">
+            <p class="text-center text-3xl font-oswald pt-5 pb-4">
+              THE MILES THAT MADE YOU
+            </p>
+            <p class="text-end text-lg pb-5">FOLLOW @GARMINWELLNESS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 px-[3%] gap-4 pt-12">
+        <div class="bg-white shadow-lg">
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/LEARN-MORE-CARDS/HALF-CIQ-D.png"
+            alt=""
+            class="w-full"
+          />
+          <div class="px-2">
+            <p class="text-center font-oswald text-3xl pt-5 pb-4">
+              Customize your Garmin device using the Connect IQ™ Store.
+            </p>
+            <p class="text-end text-lg pb-5">FOLLOW @GARMINWELLNESS</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg">
+          <img
+            src="https://static.garmincdn.com/gdc/Product_Pages/LEARN-MORE-CARDS/Running_Science-BOX-D.jpg"
+            alt=""
+            class="w-full"
+          />
+          <div class="px-2">
+            <p class="text-center font-oswald text-3xl pt-5 pb-4">
+              Get metrics that show exactly how hard you’re working.
+            </p>
+            <p class="text-end text-lg pb-5">FOLLOW @GARMINWELLNESS</p>
+          </div>
+        </div>
+      </div>
+      <div class="px-[12%] space-y-1 pt-20 pb-16">
+        <p class="text-xs">
+          <sup>1</sup> Requires initial setup through Garmin Connect or Garmin
+          Express™
+        </p>
+        <p class="text-xs">
+          <sup>2</sup> When paired with a compatible smartphone
+        </p>
+        <p class="text-xs">
+          <sup>3</sup> Activity tracking accuracy; sleep tracking available
+          when paired with your compatible smartphone
+        </p>
+        <p class="text-xs">
+          <sup>4</sup> This is not a medical device and is not intended for
+          use in the diagnosis or monitoring of any medical condition; see
+          Garmin.com/ataccuracy. Pulse Ox not available in all countries.
+        </p>
+        <p class="text-xs">
+          <sup>5</sup> For safety and tracking features requirements and
+          limitations, see Garmin.com/safety
+        </p>
+        <div class="text-xs space-y-6 pt-5">
+          <p>Android is a trademark of Google LLC.</p>
+          <div class="flex gap-6">
+            <img
+              src="https://static.garmincdn.com/en_US/logo/firstbeat.png"
+              alt="Firstbeat Logo"
+            />
+            <img
+              src="http://static.garmincdn.com/en/logo/2020/ant.gif"
+              alt="ANT Logo"
+            />
+          </div>
+          <p>
+            Engineering enhancements are ongoing and may not be reflected in
+            the pictures, videos and specifications.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>`,
+      });
+
       editor.BlockManager.add("six-item-grid", {
         label: `
             <div style="text-align: center; padding: 10px;">
