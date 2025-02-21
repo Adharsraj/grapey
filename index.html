@@ -1274,6 +1274,2755 @@
 </body>`,
       });
 
+//New Section
+      editor.BlockManager.add("FOOTER-PRODUCT-OVERVIEW-2", {
+        label: `
+                <div style="text-align: center;">
+          <p class="text-2xl">OVERVIEW 2</p>
+                </div>`,
+        category: "FOOTERS", // Or another category if preferred
+        content: `<body id="iuih">
+      <div class="relative w-full mx-auto ">
+        <!-- Hidden Checkbox for Toggling -->
+        <input type="checkbox" id="playToggle" class="hidden" />
+
+        <!-- Image Banner -->
+        <div class="relative h-[450px]" id="imageBanner">
+          <label
+            for="playToggle"
+            class="absolute inset-0 flex items-center justify-center cursor-pointer bg-black bg-opacity-30"
+          >
+            <!-- Play Button -->
+            <svg
+              class="w-16 h-16 text-white"
+              role="img"
+              aria-label="Play"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 144 144"
+            >
+              <path d="M121.5 72l-79 45.2V26.8l79 45.2z"></path>
+              <path
+                d="M72 143.3C32.7 143.3.7 111.3.7 72S32.7.7 72 .7s71.3 32 71.3 71.3-32 71.3-71.3 71.3zm0-132.6c-33.8 0-61.3 27.5-61.3 61.3s27.5 61.3 61.3 61.3 61.3-27.5 61.3-61.3S105.8 10.7 72 10.7z"
+              ></path>
+            </svg>
+          </label>
+          <img
+            class="hidden md:block w-full h-full object-"
+            src="https://res.garmin.com/en/products/010-02562-00/g/010-02562-00-video-desktop-d8600be1-4343-4760-a983-6404e4c0aa48.jpg"
+            alt="Desktop Banner"
+          />
+          <img
+            class="block md:hidden w-full h-full object-cover"
+            src="https://res.garmin.com/en/products/010-02562-00/g/010-02562-00-video-mobile-626a7390-43da-4e2d-8da0-22ca45337bae.jpg"
+            alt="Mobile Banner"
+          />
+        </div>
+
+        <!-- Video Container -->
+        <div class="h-[350px] hidden peer-checked:block" id="videoContainer">
+          <iframe width="1519" height="392" src="https://www.youtube.com/embed/qqqrOjkBRw8" title="Garmin: Run with Forerunner 55" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Toggling Between Image and Video -->
+        <style>
+          #playToggle:checked ~ #imageBanner {
+            display: none;
+          }
+          #playToggle:checked ~ #videoContainer {
+            display: block;
+          }
+        </style>
+      </div>
+
+      <div class="max-w-6xl grid grid-cols-10 mx-auto"></div>
+      <div class="w-full text-center font-oswald">
+        <p class="pt-12 pb-5 w-[70%] mx-auto text-center text-3xl font-oswald">
+          SEE YOURSELF AS A RUNNER
+        </p>
+        <p class="w-[70%] mx-auto text-center font-roboto text-lg">
+          This easy-to-use GPS smartwatch is designed for people of 
+          all skill levels to track their stats and chase their fitness 
+          goals.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-between gap-4 w-[80%] mx-auto pt-12">
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+        >
+          <img
+            src="https://res.garmin.com/gdc/Product_Pages/ICONS/GPS_tracking.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm">
+            Track your time, distance, pace and speed during your 
+            run or walk with built-in GPS.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+        >
+          <img
+            src="https://res.garmin.com/gdc/Product_Pages/ICONS/Battery_Life.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm">
+            Get up to 2 weeks of battery life. Because less charging is always a 
+            good thing.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+        >
+          <img
+            src="https://res.garmin.com/gdc/Product_Pages/ICONS/Health_And_Fitness_Tracking.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm">
+            Monitor your overall health and wellness with wrist-based heart rate1 and more.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+        >
+          <img
+            src="https://res.garmin.com/gdc/Product_Pages/ICONS/TRAINING-GUIDANCE.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm">
+            Take guesswork out of training. This smartwatch suggests 
+            runs tailored to you.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+        >
+          <img
+            src="https://res.garmin.com/gdc/Product_Pages/ICONS/recovery.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm">
+            High-end running features help you meet your potential. Minus the 
+            high-end price tag.
+          </p>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center text-center gap-2 w-full sm:w-[30%] lg:w-[15%]"
+        >
+          <img
+            src="https://res.garmin.com/gdc/Product_Pages/ICONS/Advanced-Wellness.svg"
+            alt=""
+            class="h-12"
+          />
+          <p class="text-sm">
+            Track more than just running with an array of built-in activity profiles.
+          </p>
+        </div>
+      </div>
+   <div class="p-10">
+      <img src="https://res.garmin.com/en/products/010-02562-00/g/010-02562-00-forerunner55-product-fan-desktop-640f49a7-e771-4d1b-b4b5-58cd0b41d8a1.jpg" alt="" class="w-full">
+   </div>
+
+   <div class="container mx-auto">
+    <div class="grid gap-2 md:grid-cols-3 px-52">
+      
+      <div class="space-y-1">
+        <h2 class="text-xl  tracking-tight sm:text-2xl font-oswald">BATTERY LIFE</h2>
+        <p class="text-muted-foreground">
+          Run to your heart's content with up to 2 weeks of battery life in smartwatch mode and up to 20 hours in
+          GPS mode.
+        </p>
+      </div>
+
+       <div class="space-y-1">
+        <h2 class="text-xl  tracking-tight sm:text-2xl font-oswald">DESIGNED FOR FORM AND FUNCTION</h2>
+        <p class="text-muted-foreground">
+          Lightweight and comfortable, this smartwatch is the perfect fit for running and for everyday life.
+        </p>
+      </div>
+
+          <div class="space-y-1">
+        <h2 class="text-xl  tracking-tight sm:text-2xl font-oswald">SPORT-READY MATERIALS</h2>
+        <p class="text-muted-foreground">
+          Whether you're running a 5K or working out another way, experience the ultimate in comfort with this
+          sporty silicone band.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full py-14">
+    <img src="https://garminbaharain.s3.me-south-1.amazonaws.com/www.garmin.bh/Data/Forerunner+55-1.png" alt="">
+  </div>
+
+      <div class="grid md:grid-cols-3 px-[10vw] gap-4 gap-y-16 pt-12">
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/built-in-gps-198f5bb7-6f86-4e01-9647-3d00a8ad2c18.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">
+            BUILT-IN GPS
+          </p>
+          <p class="mb-4 text-sm text-left">
+            Track where you run, and get accurate 
+            stats, including distance, pace and 
+            intervals.
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/wrist-based-heart-rate-e0f0df46-a6b6-49d5-a83c-fb219de34e20.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">WRIST-BASED HEART RATE</p>
+          <p class="mb-4 text-sm text-left">
+            Get heart rate data1 along with alerts 
+            if your heart rate stays high while you’re 
+            at rest. Even gauge how hard your heart is 
+            working during activities.
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/complete-5k-41e24ff7-377f-4388-baa0-914a7be7c31d.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">GARMIN COACH</p>
+          <p class="mb-4 text-sm text-left">
+            These adaptive training plans feature guidance from expert 
+            coaches and free training plans that adapt to you and your 
+            goals. Workouts sync right to your watch from the Garmin 
+            Connect™ app2.
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/daily-suggested-workouts-6520847d-3364-41d8-8c3d-08e3fdba207d.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">
+            DAILY SUGGESTED WORKOUTS
+          </p>
+          <p class="mb-4 text-sm text-left">
+            Get workouts made specifically for 
+            you and based on your data. These 
+            run recommendations vary in intensity 
+            and adapt after every run to take into 
+            account performance and recovery.
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/pacepro-technology-d46dd35d-67d4-455b-8bc4-4aa663f63f0e.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">PACEPRO™ TECHNOLOGY</p>
+          <p class="mb-4 text-sm text-left">
+            To help you plan your race day strategy, 
+            this feature offers GPS-based pace guidance 
+            for a selected course or distance in the Garmin 
+            Connect app. So you can tailor your efforts to 
+            what’s ahead.
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/finish-time-df3e0f19-376a-47c5-b40d-0b69f9fc4a94.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">FINISH TIME</p>
+          <p class="mb-4 text-sm text-left">
+            Want some guidance to help you meet 
+            your goal? Select a distance for your 
+            run, and you’ll be able to see a data 
+            screen that shows your estimated finish 
+            time.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/track-run-13f019ec-fd78-44c9-8b29-dff03e5ae1e8.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">TRACK RUN</p>
+          <p class="mb-4 text-sm text-left">
+            When you’re ready to hit the track for some speedwork, 
+            use the built-in track run activity to record accurate 
+            lap distances and see your distances in meters.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/cadence-alert-d0531239-2a14-4121-a1c7-8c88acc9fe2e.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">CADENCE ALERTS</p>
+          <p class="mb-4 text-sm text-left">
+            Want to improve your running form? 
+            Use the cadence alerts to know when 
+            you’ve gone outside your target cadence 
+            range.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/recovery-advisor-a15685b2-1d86-409b-aba5-ab46f080962c.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">RECOVERY ADVISOR</p>
+          <p class="mb-4 text-sm text-left">
+            Giving your body time to recover 
+            between training sessions is crucial. 
+            After each workout, the built-in recovery 
+            time feature will let you know how long 
+            to rest before another big effort.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/race-predictor-a6ffc398-8ee6-4349-a03a-6b4afd70f181.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">RACE PREDICTOR</p>
+          <p class="mb-4 text-sm text-left">
+            This specialized tool takes into 
+            account your fitness level and 
+            training history to help you work 
+            toward your race goal and see the 
+            impact of training on your predicted 
+            finish time.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="https://res.garmin.com/en/products/010-02562-00/g/built-in-sports-apps-17f5f87c-5d3c-4306-b636-f1d73b97e765.png"
+            alt="Product Image"
+          />
+          <p class="text-2xl mt-6 mb-4 font-oswald">BUILT-IN SPORTS APPS</p>
+          <p class="mb-4 text-sm text-left">
+            Switch up your workout routine with 
+            activity profiles for track or virtual 
+            running, pool swimming, Pilates, HIIT 
+            and even breathwork.
+          </p>
+        </div>
+        
+      </div>
+
+      <div class="w-full py-14">
+        <img src="https://garminbaharain.s3.me-south-1.amazonaws.com/www.garmin.bh/Data/Forerunner+55-2.png" alt="">
+      </div>
+    
+          <div class="grid md:grid-cols-3 px-[10vw] gap-4 gap-y-16 pt-12">
+
+            <div>
+              <img
+                src="https://res.garmin.com/en/products/010-02562-00/g/fitness-tracking-bbc79bed-0853-4531-8599-f817e345f759.png"
+                alt="Product Image"
+              />
+              <p class="text-2xl mt-6 mb-4 font-oswald">
+                FITNESS TRACKING
+              </p>
+              <p class="mb-4 text-sm text-left">
+                While you’re out and about, 
+                Forerunner 55 tracks steps, 
+                intensity minutes and more1.
+              </p>
+            </div>
+
+            <div>
+              <img
+                src="https://res.garmin.com/en/products/010-02562-00/g/stress-tracking-ffa06023-88d7-40e5-864b-6471dced2f15.png"
+                alt="Product Image"
+              />
+              <p class="text-2xl mt-6 mb-4 font-oswald">
+                STRESS TRACKING
+              </p>
+              <p class="mb-4 text-sm text-left">
+                Find out if you’re having a calm, 
+                balanced or stressful day. Relax 
+                reminders will even prompt you to 
+                do a short breathing activity.
+              </p>
+            </div>
+
+            <div>
+              <img
+                src="https://res.garmin.com/en/products/010-02562-00/g/body-battery-e6d712d8-a9d1-42d5-b588-2d950396c154.png"
+                alt="Product Image"
+              />
+              <p class="text-2xl mt-6 mb-4 font-oswald">
+                BODY BATTERY™ ENERGY MONITORING
+              </p>
+              <p class="mb-4 text-sm text-left">
+                Track your body’s energy levels 
+                so you can find the best times 
+                for activity and rest.
+              </p>
+            </div>
+
+            <div>
+              <img
+                src="https://res.garmin.com/en/products/010-02562-00/g/intensity-minutes-v2-af918076-b724-495f-b861-e3978307ec0e.png"
+                alt="Product Image"
+              />
+              <p class="text-2xl mt-6 mb-4 font-oswald">
+                INTENSITY MINUTES
+              </p>
+              <p class="mb-4 text-sm text-left">
+                See when during the day you earned 
+                intensity minutes from moderate and 
+                vigorous physical activity.
+              </p>
+            </div>
+
+            <div>
+              <img
+                src="https://res.garmin.com/en/products/010-02562-00/g/fitness-age-5ec2223e-d461-46ad-8fad-7c4aa46ea5e9.png"
+                alt="Product Image"
+              />
+              <p class="text-2xl mt-6 mb-4 font-oswald">
+                FITNESS AGE
+              </p>
+              <p class="mb-4 text-sm text-left">
+                This feature uses chronological 
+                age, resting heart rate and other 
+                factors to estimate if your body 
+                is younger or older than you are. 
+                Age is just a number, after all.
+              </p>
+            </div>
+
+            <div>
+              <img
+                src="https://res.garmin.com/en/products/010-02562-00/g/respiration-tracking-b59389b9-06df-46b9-b027-2e2d90ae3c19.png"
+                alt="Product Image"
+              />
+              <p class="text-2xl mt-6 mb-4 font-oswald">
+                RESPIRATION TRACKING
+              </p>
+              <p class="mb-4 text-sm text-left">
+                See how you’re breathing throughout 
+                the day, during sleep and during 
+                breathwork activities.
+              </p>
+            </div>
+
+            <div>
+              <img
+                src="https://res.garmin.com/en/products/010-02562-00/g/womens-health-tracking-0f9cdaf1-bc03-4f42-b904-d7892ded3356.png"
+                alt="Product Image"
+              />
+              <p class="text-2xl mt-6 mb-4 font-oswald">
+                WOMEN’S HEALTH TRACKING
+              </p>
+              <p class="mb-4 text-sm text-left">
+                Use the Garmin Connect app2 to 
+                track your menstrual cycle or 
+                pregnancy. Log symptoms, get 
+                exercise and nutrition education, 
+                and more.
+              </p>
+            </div>
+
+            
+          
+            
+          </div>
+
+          <div class="w-full py-14">
+            <img src="https://garminbaharain.s3.me-south-1.amazonaws.com/www.garmin.bh/Data/Forerunner+55-3.png" alt="">
+          </div>
+        
+              <div class="grid md:grid-cols-3 px-[10vw] gap-4 gap-y-16 pt-12">
+    
+                <div>
+                  <img
+                    src="https://res.garmin.com/en/products/010-02562-00/g/smart-notifications-49cdf0ee-73d2-4551-ac99-bbf970a6c9ae.png"
+                    alt="Product Image"
+                  />
+                  <p class="text-2xl mt-6 mb-4 font-oswald">
+                    SMART NOTIFICATIONS
+                  </p>
+                  <p class="mb-4 text-sm text-left">
+                    Receive emails, texts and alerts 
+                    right on your smartwatch when 
+                    paired with your compatible 
+                    smartphone.
+                  </p>
+                </div>
+
+                <div>
+                  <img
+                    src="https://res.garmin.com/en/products/010-02562-00/g/safety-and-tracking-features-v2-9c263d2e-dd9a-4996-866b-d4e52e6b48ec.png"
+                    alt="Product Image"
+                  />
+                  <p class="text-2xl mt-6 mb-4 font-oswald">
+                    SAFETY AND TRACKING FEATURES
+                  </p>
+                  <p class="mb-4 text-sm text-left">
+                    If you feel unsafe or if your watch 
+                    senses that an incident occurred, 
+                    assistance and incident detection 
+                    features3 send your location to 
+                    emergency contacts. Incident 
+                    detection is enabled by default 
+                    for select activity profiles only.
+                  </p>
+                </div>
+
+                <div>
+                  <img
+                    src="https://res.garmin.com/en/products/010-02562-00/g/connect-iq-store-v2-47f53994-8d9c-4ec9-9b53-91e4e330ede0.png"
+                    alt="Product Image"
+                  />
+                  <p class="text-2xl mt-6 mb-4 font-oswald">
+                    CONNECT IQ™ STORE
+                  </p>
+                  <p class="mb-4 text-sm text-left">
+                    Download custom watch faces, add 
+                    data fields, and get apps from the 
+                    Connect IQ Store app2.
+                  </p>
+                </div>
+
+                <div>
+                  <img
+                    src="https://res.garmin.com/en/products/010-02562-00/g/music-controls-6c0a4209-e87a-4ae9-83bc-5266caabcf84.png"
+                    alt="Product Image"
+                  />
+                  <p class="text-2xl mt-6 mb-4 font-oswald">
+                    MUSIC CONTROLS
+                  </p>
+                  <p class="mb-4 text-sm text-left">
+                    Easily control the music playing 
+                    on your paired smartphone, so you 
+                    can skip songs without missing a beat.
+                  </p>
+                </div>
+
+                <div>
+                  <img
+                    src="https://res.garmin.com/en/products/010-02562-00/g/syncs-with-garmin-connect-bfbf6f25-03e6-426b-8f49-6a620774f7b3.png"
+                    alt="Product Image"
+                  />
+                  <p class="text-2xl mt-6 mb-4 font-oswald">
+                    SYNCS WITH GARMIN CONNECT
+                  </p>
+                  <p class="mb-4 text-sm text-left">
+                    Upload your activities to the 
+                    Garmin Connect app to interact 
+                    with a thriving online community 
+                    where people on the go can connect 
+                    and compete — and even share their 
+                    triumphs via social media.
+                  </p>
+                </div>
+
+                
+                
+              </div>
+
+              <div class="w-full py-14">
+                <img src="https://garminbaharain.s3.me-south-1.amazonaws.com/www.garmin.bh/Data/Forerunner+55-4.png" alt="">
+              </div>
+    
+     
+    
+
+      <div class="bg-[#F2F2F2]">
+        <!-- 2 Cards Common -->
+       
+
+        <div class="grid md:grid-cols-2 px-[3%] gap-4 pt-12">
+          <div class="bg-white shadow-lg">
+            <img
+              src="https://res.garmin.com/gdc/Product_Pages/LEARN-MORE-CARDS/GARFIT-BOX-D.jpg"
+              alt=""
+              class="w-full"
+            />
+            <div class="px-2">
+              <p class="text-center font-oswald text-3xl pt-5 pb-4">
+                If you love to move, you should be following @GarminFitness on Instagram®
+              </p>
+              <p class="text-end text-lg pb-5">Learn More</p>
+            </div>
+          </div>
+          <div class="bg-white shadow-lg">
+            <img
+              src="https://res.garmin.com/gdc/Product_Pages/LEARN-MORE-CARDS/HALF-CIQ-55-D.jpg"
+              alt=""
+              class="w-full"
+            />
+            <div class="px-2">
+              <p class="text-center font-oswald text-3xl pt-5 pb-4">
+                Customize your Garmin device using the Connect IQ Store.
+              </p>
+              <p class="text-end text-lg pb-5">Learn More</p>
+            </div>
+          </div>
+        </div>
+       
+        <div class="bg-[#F2F2F2]">
+        
+        
+
+        
+          <div class="px-[12%] space-y-1 pt-20 pb-16">
+            <p class="text-xs">
+              <sup>1</sup> Activity tracking accuracy
+            </p>
+            <p class="text-xs">
+              <sup>2</sup> This is not a medical device
+               and is not intended for use in the diagnosis
+                or monitoring of any medical condition;
+                 see Garmin.com/ataccuracy. Pulse Ox not
+                  available in all countries.
+            </p>
+            <p class="text-xs">
+              <sup>3</sup> When paired with your compatible
+               smartphone. For safety and tracking feature
+                requirements and limitations, see 
+                Garmin.com/safety.
+            </p>
+            <p class="text-xs">
+              <sup>4</sup> This is not a medical device and is not intended for
+              use in the diagnosis or monitoring of any medical condition; see
+              Garmin.com/ataccuracy. Pulse Ox not available in all countries.
+            </p>
+            
+            <div class="text-xs space-y-6 pt-5">
+              <p>When paired with your compatible 
+                smartphone. For safety and tracking
+                 feature requirements and limitations,
+                  see Garmin.com/safety.</p>
+              
+             
+              <p>
+                Engineering enhancements are ongoing and may not be reflected in 
+                the pictures, videos and specifications.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </body>`,
+      });
+
+
+    
+
+      editor.BlockManager.add("FOOTER-PRODUCT-SPEC-2", {
+        label: `
+                <div style="text-align: center;">
+          <p class="text-2xl">SPEC 2</p>
+                </div>`,
+        category: "FOOTERS", // Or another category if preferred
+        content: `<body >
+    <div class="max-w-6xl flex flex-wrap mx-auto">
+        <div class="flex-1 basis-[70%] px-[10%]">
+          <div class="text-xs">
+            
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      What You'll Love
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Battery life (smartwatch mode)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Up to 2 weeks</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/running-science/physiological-measurements/daily-suggested-workouts-feature/">Daily suggested workouts</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>yes (limited)</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Display type</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Sunlight-visible, transflective memory-in-pixel (MIP)</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/legal/waterrating-definitions/">Water rating</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>5 ATM</span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      General
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Strap material</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>silicone</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Lens Material</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>chemically strengthened glass</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Quick Release bands</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>yes (20 mm, Industry standard)</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Physical size</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>42 x 42 x 11.6 mm<br>Fits wrists with a circumference of 126-203 mm</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Weight</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>37 g</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Display Size</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>1.04" (26.3 mm) diameter</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Display resolution</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>208 x 208 pixels</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Color display</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Battery life</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Smartwatch Mode: Up to 2 weeks<br> GPS mode: Up to 20 hours<br><a href="https://support.garmin.com/?faq=id4j4F0m9W4elydZFQ9Tb9">See details</a></span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Charging method</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Garmin proprietary plug charger</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Memory/History</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>32 MB</span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Clock Features
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Time/date</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>GPS Time Sync</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Automatic daylight saving time</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Alarm clock</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Timer</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Stopwatch</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Sunrise/sunset times</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Health & Wellness Monitoring
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/heart-rate-monitoring/">Wrist-based heart rate</a> (constant, every second)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/heart-rate-monitoring/">Daily resting heart rate</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/heart-rate-monitoring/">Abnormal heart rate alerts</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>yes (high and low)</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/respiration-rate/">Respiration rate</a> (24x7)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/fitness-age/">Fitness age</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/body-battery/">Body Battery™ energy monitor</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/stress-tracking/">All-day stress</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Relaxation reminders</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/respiration-rate/">Relaxation breathing timer</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/sleep-tracking/">Sleep</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>yes (advanced)</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/hydration/">Hydration</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>yes (in Garmin Connect™ and optional Connect IQ™ widget)</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/womens-health/">Women's health</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Sensors
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>GPS</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>GLONASS</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Galileo</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Garmin Elevate™ wrist heart rate monitor</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Accelerometer</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Daily Smart Features
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Connectivity</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Bluetooth®, ANT+®</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Connect IQ™ (downloadable watch faces, data fields, widgets and apps)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Smart Notifications</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Calendar</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Weather forecasts</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Controls smartphone music</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Find My Phone</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Find My Watch</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Pairs with Garmin Connect™ Mobile</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Smartphone compatibility</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>iPhone®, Android™</span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Activity Profiles
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Gym</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>HIIT, Cardio, Elliptical Training, Stair Stepping</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Wellness</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Walking, Pilates, Yoga</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Indoor running</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Treadmill Running, Indoor Track Running, Virtual Running</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Outdoor running</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Running, Outdoor Track Running</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Cycling</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Biking, Indoor Biking</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Swim</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Pool Swimming</span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Safety and Tracking Features
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Incident Detection during select activities</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                 <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Incident detection alert on phone for wearables</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Assistance</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>LiveTrack</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Live Event Sharing</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Android™ Only</span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Activity Tracking Features
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Step counter</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Move alerts (displays on device after a period of inactivity)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Auto goal (learns your activity level and assigns a daily step goal)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/calories-burned/">Calories burned</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Distance traveled</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/intensity-minutes/">Intensity minutes</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>TrueUp™</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Move IQ™</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Training, Planning and Analysis Features
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Customizable data pages</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Downloadable training plans</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/heart-rate-monitoring/">HR zones</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/heart-rate-monitoring/">HR alerts</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/heart-rate-monitoring/">HR calories</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/running-science/physiological-measurements/recovery-time/">Recovery time</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/heart-rate-monitoring/">Auto max HR</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/heart-rate-monitoring/">HR broadcast</a> (broadcasts HR data over ANT+® to paired devices)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/health-science/respiration-rate/">Respiration rate</a> (during exercise)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>Yoga and Breathwork only</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>GPS speed and distance</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Customizable activity profiles</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Auto Pause®</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Interval training</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Advanced workouts</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>HRM running pace and distance</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Auto Lap®</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Manual lap</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Configurable lap alerts</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/running-science/physiological-measurements/vo2-max/">VO2 Max</a> (Run)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/running-science/physiological-measurements/recovery-time/">Improved recovery time</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>yes (limited)</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Audio prompts</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Finish time</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Touch and/or button lock</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Activity history on watch</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://support.garmin.com/en-US/?faq=g4zagaDmtJ0luYPPvEuwz9">Physio TrueUp</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Running Features
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>GPS-based distance, time and pace</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/running-science/running-dynamics/cadence/">Cadence</a> (provides real-time number of steps per minute)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/wearable-maps/pacepro/">PacePro™ Pacing Strategies</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Run workouts</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span><a href="https://www.garmin.com/en-US/garmin-technology/running-science/physiological-measurements/race-time-prediction/">Race predictor</a></span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Foot pod capable</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Run/Walk/Stand detection</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Outdoor Recreation
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Area calculation</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>yes (via Connect IQ™)</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Fish forecast</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>yes (via Connect IQ™)</span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Sun and moon information</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>yes (via Connect IQ™)</span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Cycling Features
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Alerts (triggers alarm when you reach goals including time, distance, heart rate or calories)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Speed and cadence sensor support (w/sensor)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Swimming Features
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Pool swim metrics (lengths, distance, pace, stroke count, swim efficiency (SWOLF), calories)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Stroke type detection (freestyle, backstroke, breaststroke, butterfly) (pool swim only)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Drill logging (pool swim only)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Basic rest timer (up from 0) (pool swim only)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>"Repeat on" rest timer (pool swim only)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Auto rest (pool swim only)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Time and distance alerts</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Countdown start (pool swim only)</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Underwater wrist-based heart rate</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span class="yes">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto  font-bold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+
+            <table class="w-full mt-10 border-collapse">
+              <tbody>
+                <tr class="text-black border-b border-gray-300">
+                  <td colspan="2" class="p-2">
+                    <h3 class="text-xl font-oswald">
+                      Kid Activity Tracking Features
+                    </h3>
+                  </td>
+                </tr>
+            
+                <tr>
+                  <th scope="row" class="bg-[#f2f2f2] w-1/2 uppercase font-medium text-xs text-left p-5 border-b border-gray-300">
+                    <span>Toe-to-Toe™ Challenges app</span>
+                  </th>
+                  <td class="p-4 border-b text-center border-gray-300">
+                    <span>yes (optional Connect IQ Toe-to-Toe™ Challenges app)</span>
+                  </td>
+                </tr>
+            
+              </tbody>
+            </table>
+            
+          </div>
+        </div>
+      
+        <div class="flex-1 basis-[30%] space-y-20">
+          <div class="flex flex-col items-center space-y-20 mt-6">
+            <div class="w-14 h-20 mx-auto">
+                <svg id="manual_Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 100 100" xml:space="preserve"><g id="Audiobooks_1_"><defs><path id="manual_SVGID_21_" d="M0 3.2h100v93.5H0z"></path></defs><clipPath id="manual_SVGID_2_"><use xlink:href="#manual_SVGID_21_" overflow="visible"></use></clipPath><g clip-path="url(#manual_SVGID_2_)"><defs><path id="manual_SVGID_23_" d="M0 3.2h100v93.5H0z"></path></defs><clipPath id="manual_SVGID_4_"><use xlink:href="#manual_SVGID_23_" overflow="visible"></use></clipPath><path d="M50 17.6v67m39.8-71.3h8.8v69.1H72.1c-8.8 0-15.5 4.3-15.5 13H43.4c0-8.6-6.6-13-15.5-13H1.4V13.3h8.8m39.9 73.4c0-8.6 4.4-13 13.2-13h26.5V4.6H63.3C54.4 4.6 50 9 50 17.6c0-8.6-4.4-13-13.3-13H10.2v69.1h26.5c8.9.1 13.4 4.4 13.4 13z" clip-path="url(#manual_SVGID_4_)" fill="none" stroke="#231f20" stroke-width="2.778" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path></g></g></svg>
+              <p class="mt-2">Manuals</p>
+            </div>
+            <div class="w-14 h-20 mx-auto">
+                <svg id="software_Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 100 100" xml:space="preserve"><g id="Software_Updates_1_"><defs><path id="software_SVGID_25_" d="M0 8.5h100v82.9H0z"></path></defs><clipPath id="software_SVGID_2_"><use xlink:href="#software_SVGID_25_" overflow="visible"></use></clipPath><g clip-path="url(#software_SVGID_2_)"><defs><path id="software_SVGID_27_" d="M0 8.5h100v82.9H0z"></path></defs><clipPath id="software_SVGID_4_"><use xlink:href="#software_SVGID_27_" overflow="visible"></use></clipPath><path d="M51.2 47.6c0 7.3-5.9 13.3-13.2 13.3-7.3 0-13.2-6-13.2-13.3 0-7.3 5.9-13.3 13.2-13.3 7.3 0 13.2 6 13.2 13.3zm15.3-6.8l8.4-4.9-8.4-14.6-8.4 4.9c-3.3-3.1-7.3-5.4-11.7-6.7V9.6H29.6v9.8c-4.4 1.3-8.4 3.6-11.7 6.7l-8.4-4.9-8.4 14.7 8.4 4.9c-1.1 4.9-1.1 8.7 0 13.6l-8.4 4.9 8.4 14.6 8.4-4.9c3.3 3.1 7.3 5.4 11.7 6.7v9.8h16.8v-9.8m41-5L76.1 81.4 64.9 70.7m11.2 10.7V56m22.8 12.7c0 12-10.2 21.7-22.8 21.7-12.6 0-22.8-9.7-22.8-21.7S63.5 47 76.1 47c12.6.1 22.8 9.8 22.8 21.7z" clip-path="url(#software_SVGID_4_)" fill="none" stroke="#231f20" stroke-width="2.171" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path></g></g></svg>
+              <p class="mt-2">Software</p>
+            </div>
+            <div class="w-14 h-20 mx-auto">
+                <svg id="support_Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 100" xml:space="preserve"><path d="M20.8 45.2l-6.1 17.4 19.4-12c2.3.4 4.5.6 6.7.6h1.4c-1-1.1-1.8-2.2-2.5-3.4-1.8-.1-3.7-.3-5.6-.6l-.6-.2-12.4 7.7 3.8-10.9-1.2-.7c-6.8-4.3-10.8-10.6-10.8-17.5 0-12.2 12.5-22.2 27.9-22.2 10.6 0 19.9 4.8 24.6 11.8 1.4.1 2.8.2 4.2.4C64.8 6.4 53.7 0 40.8 0 23.6 0 9.5 11.5 9.5 25.6c0 7.7 4.1 14.7 11.3 19.6z"></path><path d="M41.8 38.1c0 10.1 10 18.3 22.3 18.3 2.3 0 4.6-.3 6.8-.9l16.5 7.2-6.8-12.4c3.7-3.4 5.7-7.7 5.7-12.2 0-10.1-10-18.3-22.3-18.3S41.8 28 41.8 38.1zm41.1 0c0 4-1.9 7.7-5.5 10.5l-1.1.9 3.4 6.2-8.6-3.7-.6.2c-2.1.6-4.3.9-6.5.9-10.4 0-18.9-6.7-18.9-14.9S53.6 23.3 64 23.3s18.9 6.6 18.9 14.8z"></path><circle cx="53.4" cy="38.8" r="2.5"></circle><circle cx="64.1" cy="38.8" r="2.5"></circle><circle cx="74.8" cy="38.8" r="2.5"></circle><path d="M29.2 100v-9.3c0-1.1-.9-2-2-2h-5.8v3.4h4.4v7.9h3.4zM5 90.7v9.3h3.4v-7.9h4.4v-3.4H7c-1.1 0-2 .9-2 2zM11.7 85.1c1.5 1.1 3.4 1.7 5.4 1.7s3.9-.6 5.4-1.7c2.4-1.7 4-4.5 4-7.6 0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4c0 3.1 1.6 5.9 4 7.6zm5.4-13.6c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6zM95 100v-9.3c0-1.1-.9-2-2-2h-5.8v3.4h4.4v7.9H95zM78.6 88.7h-5.8c-1.1 0-2 .9-2 2v9.3h3.4v-7.9h4.4v-3.4zM92.3 77.5c0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4c0 3.2 1.6 6 4 7.6 1.5 1.1 3.4 1.7 5.4 1.7 2 0 3.9-.6 5.4-1.7 2.4-1.7 4-4.5 4-7.6zm-9.4 5.9c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6c0 3.4-2.7 6-6 6z"></path></svg>
+              <p class="mt-2">Support center</p>
+            </div>
+          </div>
+          <!-- <div class="flex flex-col items-center space-y-20 mt-6">
+            <p class="text-xl font-bold font-oswald uppercase ">Compatible Products
+            </p>
+            <div class="w-14 h-20 mx-auto">
+                <svg id="manual_Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 100 100" xml:space="preserve"><g id="Audiobooks_1_"><defs><path id="manual_SVGID_21_" d="M0 3.2h100v93.5H0z"></path></defs><clipPath id="manual_SVGID_2_"><use xlink:href="#manual_SVGID_21_" overflow="visible"></use></clipPath><g clip-path="url(#manual_SVGID_2_)"><defs><path id="manual_SVGID_23_" d="M0 3.2h100v93.5H0z"></path></defs><clipPath id="manual_SVGID_4_"><use xlink:href="#manual_SVGID_23_" overflow="visible"></use></clipPath><path d="M50 17.6v67m39.8-71.3h8.8v69.1H72.1c-8.8 0-15.5 4.3-15.5 13H43.4c0-8.6-6.6-13-15.5-13H1.4V13.3h8.8m39.9 73.4c0-8.6 4.4-13 13.2-13h26.5V4.6H63.3C54.4 4.6 50 9 50 17.6c0-8.6-4.4-13-13.3-13H10.2v69.1h26.5c8.9.1 13.4 4.4 13.4 13z" clip-path="url(#manual_SVGID_4_)" fill="none" stroke="#231f20" stroke-width="2.778" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path></g></g></svg>
+              <p class="mt-2">Manuals</p>
+            </div>
+            <div class="w-14 h-20 mx-auto">
+                <svg id="software_Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 100 100" xml:space="preserve"><g id="Software_Updates_1_"><defs><path id="software_SVGID_25_" d="M0 8.5h100v82.9H0z"></path></defs><clipPath id="software_SVGID_2_"><use xlink:href="#software_SVGID_25_" overflow="visible"></use></clipPath><g clip-path="url(#software_SVGID_2_)"><defs><path id="software_SVGID_27_" d="M0 8.5h100v82.9H0z"></path></defs><clipPath id="software_SVGID_4_"><use xlink:href="#software_SVGID_27_" overflow="visible"></use></clipPath><path d="M51.2 47.6c0 7.3-5.9 13.3-13.2 13.3-7.3 0-13.2-6-13.2-13.3 0-7.3 5.9-13.3 13.2-13.3 7.3 0 13.2 6 13.2 13.3zm15.3-6.8l8.4-4.9-8.4-14.6-8.4 4.9c-3.3-3.1-7.3-5.4-11.7-6.7V9.6H29.6v9.8c-4.4 1.3-8.4 3.6-11.7 6.7l-8.4-4.9-8.4 14.7 8.4 4.9c-1.1 4.9-1.1 8.7 0 13.6l-8.4 4.9 8.4 14.6 8.4-4.9c3.3 3.1 7.3 5.4 11.7 6.7v9.8h16.8v-9.8m41-5L76.1 81.4 64.9 70.7m11.2 10.7V56m22.8 12.7c0 12-10.2 21.7-22.8 21.7-12.6 0-22.8-9.7-22.8-21.7S63.5 47 76.1 47c12.6.1 22.8 9.8 22.8 21.7z" clip-path="url(#software_SVGID_4_)" fill="none" stroke="#231f20" stroke-width="2.171" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path></g></g></svg>
+              <p class="mt-2">Software</p>
+            </div>
+            <div class="w-14 h-20 mx-auto">
+                <svg id="support_Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 100" xml:space="preserve"><path d="M20.8 45.2l-6.1 17.4 19.4-12c2.3.4 4.5.6 6.7.6h1.4c-1-1.1-1.8-2.2-2.5-3.4-1.8-.1-3.7-.3-5.6-.6l-.6-.2-12.4 7.7 3.8-10.9-1.2-.7c-6.8-4.3-10.8-10.6-10.8-17.5 0-12.2 12.5-22.2 27.9-22.2 10.6 0 19.9 4.8 24.6 11.8 1.4.1 2.8.2 4.2.4C64.8 6.4 53.7 0 40.8 0 23.6 0 9.5 11.5 9.5 25.6c0 7.7 4.1 14.7 11.3 19.6z"></path><path d="M41.8 38.1c0 10.1 10 18.3 22.3 18.3 2.3 0 4.6-.3 6.8-.9l16.5 7.2-6.8-12.4c3.7-3.4 5.7-7.7 5.7-12.2 0-10.1-10-18.3-22.3-18.3S41.8 28 41.8 38.1zm41.1 0c0 4-1.9 7.7-5.5 10.5l-1.1.9 3.4 6.2-8.6-3.7-.6.2c-2.1.6-4.3.9-6.5.9-10.4 0-18.9-6.7-18.9-14.9S53.6 23.3 64 23.3s18.9 6.6 18.9 14.8z"></path><circle cx="53.4" cy="38.8" r="2.5"></circle><circle cx="64.1" cy="38.8" r="2.5"></circle><circle cx="74.8" cy="38.8" r="2.5"></circle><path d="M29.2 100v-9.3c0-1.1-.9-2-2-2h-5.8v3.4h4.4v7.9h3.4zM5 90.7v9.3h3.4v-7.9h4.4v-3.4H7c-1.1 0-2 .9-2 2zM11.7 85.1c1.5 1.1 3.4 1.7 5.4 1.7s3.9-.6 5.4-1.7c2.4-1.7 4-4.5 4-7.6 0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4c0 3.1 1.6 5.9 4 7.6zm5.4-13.6c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6zM95 100v-9.3c0-1.1-.9-2-2-2h-5.8v3.4h4.4v7.9H95zM78.6 88.7h-5.8c-1.1 0-2 .9-2 2v9.3h3.4v-7.9h4.4v-3.4zM92.3 77.5c0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4c0 3.2 1.6 6 4 7.6 1.5 1.1 3.4 1.7 5.4 1.7 2 0 3.9-.6 5.4-1.7 2.4-1.7 4-4.5 4-7.6zm-9.4 5.9c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6c0 3.4-2.7 6-6 6z"></path></svg>
+              <p class="mt-2">Support center</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+</body>`,
+      });
+
+      editor.BlockManager.add("FOOTER-PRODUCT-IN-THE-BOX-2", {
+        label: `
+                <div style="text-align: center;">
+          <p class="text-2xl">IN THE BOX 2</p>
+                </div>`,
+        category: "FOOTERS", // Or another category if preferred
+        content: `<body>
+    <div class="max-w-6xl flex flex-wrap mx-auto">
+      <div class="flex-1 basis-[70%] px-[10%]">
+        <div class="text-xs mt-5">
+          <ul class="list-disc text-sm space-y-6">
+            <li>Forerunner 55 </li>
+            <li>Charging/data cable</li>
+            <li>Documentation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex-1 basis-[30%] space-y-20">
+        <div class="flex flex-col items-center space-y-20 mt-6">
+          <div class="w-14 h-20 mx-auto">
+            <svg
+              id="manual_Layer_1"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0"
+              y="0"
+              viewBox="0 0 100 100"
+              xml:space="preserve"
+            >
+              <g id="Audiobooks_1_">
+                <defs>
+                  <path id="manual_SVGID_21_" d="M0 3.2h100v93.5H0z"></path>
+                </defs>
+                <clipPath id="manual_SVGID_2_">
+                  <use xlink:href="#manual_SVGID_21_" overflow="visible"></use>
+                </clipPath>
+                <g clip-path="url(#manual_SVGID_2_)">
+                  <defs>
+                    <path id="manual_SVGID_23_" d="M0 3.2h100v93.5H0z"></path>
+                  </defs>
+                  <clipPath id="manual_SVGID_4_">
+                    <use
+                      xlink:href="#manual_SVGID_23_"
+                      overflow="visible"
+                    ></use>
+                  </clipPath>
+                  <path
+                    d="M50 17.6v67m39.8-71.3h8.8v69.1H72.1c-8.8 0-15.5 4.3-15.5 13H43.4c0-8.6-6.6-13-15.5-13H1.4V13.3h8.8m39.9 73.4c0-8.6 4.4-13 13.2-13h26.5V4.6H63.3C54.4 4.6 50 9 50 17.6c0-8.6-4.4-13-13.3-13H10.2v69.1h26.5c8.9.1 13.4 4.4 13.4 13z"
+                    clip-path="url(#manual_SVGID_4_)"
+                    fill="none"
+                    stroke="#231f20"
+                    stroke-width="2.778"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="10"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <p class="mt-2">Manuals</p>
+          </div>
+          <div class="w-14 h-20 mx-auto">
+            <svg
+              id="software_Layer_1"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0"
+              y="0"
+              viewBox="0 0 100 100"
+              xml:space="preserve"
+            >
+              <g id="Software_Updates_1_">
+                <defs>
+                  <path id="software_SVGID_25_" d="M0 8.5h100v82.9H0z"></path>
+                </defs>
+                <clipPath id="software_SVGID_2_">
+                  <use
+                    xlink:href="#software_SVGID_25_"
+                    overflow="visible"
+                  ></use>
+                </clipPath>
+                <g clip-path="url(#software_SVGID_2_)">
+                  <defs>
+                    <path id="software_SVGID_27_" d="M0 8.5h100v82.9H0z"></path>
+                  </defs>
+                  <clipPath id="software_SVGID_4_">
+                    <use
+                      xlink:href="#software_SVGID_27_"
+                      overflow="visible"
+                    ></use>
+                  </clipPath>
+                  <path
+                    d="M51.2 47.6c0 7.3-5.9 13.3-13.2 13.3-7.3 0-13.2-6-13.2-13.3 0-7.3 5.9-13.3 13.2-13.3 7.3 0 13.2 6 13.2 13.3zm15.3-6.8l8.4-4.9-8.4-14.6-8.4 4.9c-3.3-3.1-7.3-5.4-11.7-6.7V9.6H29.6v9.8c-4.4 1.3-8.4 3.6-11.7 6.7l-8.4-4.9-8.4 14.7 8.4 4.9c-1.1 4.9-1.1 8.7 0 13.6l-8.4 4.9 8.4 14.6 8.4-4.9c3.3 3.1 7.3 5.4 11.7 6.7v9.8h16.8v-9.8m41-5L76.1 81.4 64.9 70.7m11.2 10.7V56m22.8 12.7c0 12-10.2 21.7-22.8 21.7-12.6 0-22.8-9.7-22.8-21.7S63.5 47 76.1 47c12.6.1 22.8 9.8 22.8 21.7z"
+                    clip-path="url(#software_SVGID_4_)"
+                    fill="none"
+                    stroke="#231f20"
+                    stroke-width="2.171"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="10"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <p class="mt-2">Software</p>
+          </div>
+          <div class="w-14 h-20 mx-auto">
+            <svg
+              id="support_Layer_1"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0"
+              y="0"
+              viewBox="0 0 100 100"
+              xml:space="preserve"
+            >
+              <path
+                d="M20.8 45.2l-6.1 17.4 19.4-12c2.3.4 4.5.6 6.7.6h1.4c-1-1.1-1.8-2.2-2.5-3.4-1.8-.1-3.7-.3-5.6-.6l-.6-.2-12.4 7.7 3.8-10.9-1.2-.7c-6.8-4.3-10.8-10.6-10.8-17.5 0-12.2 12.5-22.2 27.9-22.2 10.6 0 19.9 4.8 24.6 11.8 1.4.1 2.8.2 4.2.4C64.8 6.4 53.7 0 40.8 0 23.6 0 9.5 11.5 9.5 25.6c0 7.7 4.1 14.7 11.3 19.6z"
+              ></path>
+              <path
+                d="M41.8 38.1c0 10.1 10 18.3 22.3 18.3 2.3 0 4.6-.3 6.8-.9l16.5 7.2-6.8-12.4c3.7-3.4 5.7-7.7 5.7-12.2 0-10.1-10-18.3-22.3-18.3S41.8 28 41.8 38.1zm41.1 0c0 4-1.9 7.7-5.5 10.5l-1.1.9 3.4 6.2-8.6-3.7-.6.2c-2.1.6-4.3.9-6.5.9-10.4 0-18.9-6.7-18.9-14.9S53.6 23.3 64 23.3s18.9 6.6 18.9 14.8z"
+              ></path>
+              <circle cx="53.4" cy="38.8" r="2.5"></circle>
+              <circle cx="64.1" cy="38.8" r="2.5"></circle>
+              <circle cx="74.8" cy="38.8" r="2.5"></circle>
+              <path
+                d="M29.2 100v-9.3c0-1.1-.9-2-2-2h-5.8v3.4h4.4v7.9h3.4zM5 90.7v9.3h3.4v-7.9h4.4v-3.4H7c-1.1 0-2 .9-2 2zM11.7 85.1c1.5 1.1 3.4 1.7 5.4 1.7s3.9-.6 5.4-1.7c2.4-1.7 4-4.5 4-7.6 0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4c0 3.1 1.6 5.9 4 7.6zm5.4-13.6c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6zM95 100v-9.3c0-1.1-.9-2-2-2h-5.8v3.4h4.4v7.9H95zM78.6 88.7h-5.8c-1.1 0-2 .9-2 2v9.3h3.4v-7.9h4.4v-3.4zM92.3 77.5c0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4c0 3.2 1.6 6 4 7.6 1.5 1.1 3.4 1.7 5.4 1.7 2 0 3.9-.6 5.4-1.7 2.4-1.7 4-4.5 4-7.6zm-9.4 5.9c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6c0 3.4-2.7 6-6 6z"
+              ></path>
+            </svg>
+            <p class="mt-2">Support center</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </body>`,
+      });
+
+      editor.BlockManager.add("FOOTER-PRODUCT-VIDEO-GALLERY-2", {
+        label: `
+                <div style="text-align: center;">
+          <p class="text-2xl">VIDEO-GALLERY 2</p>
+                </div>`,
+        category: "FOOTERS", // Or another category if preferred
+        content: ` <body>
+    
+    <div class="max-w-6xl flex flex-wrap mx-auto">
+      <div class="grid grid-cols-10 gap-32 p-4">
+        <div class="col-span-7 ">
+          <div class="flex-1 basis-[70%] px-[10%]">
+            <div class="text-xs mt-5">
+              <iframe width="718" height="404" src="https://www.youtube.com/embed/LNPSPS7UzwI?list=PLCnuc6xd15eoHSLd3jPs87l6Tta26sh_1" title="Forerunner® 55: See Yourself as a Runner – Garmin® Retail Training" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-start col-span-3  p-4 ">
+          <div class="flex-1 basis-[30%] space-y-20">
+            <div class="flex flex-col items-center space-y-20 mt-6">
+              <div class="w-14 h-20 mx-auto">
+                <svg
+                  id="manual_Layer_1"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 100 100"
+                  xml:space="preserve"
+                >
+                  <g id="Audiobooks_1_">
+                    <defs>
+                      <path id="manual_SVGID_21_" d="M0 3.2h100v93.5H0z"></path>
+                    </defs>
+                    <clipPath id="manual_SVGID_2_">
+                      <use xlink:href="#manual_SVGID_21_" overflow="visible"></use>
+                    </clipPath>
+                    <g clip-path="url(#manual_SVGID_2_)">
+                      <defs>
+                        <path id="manual_SVGID_23_" d="M0 3.2h100v93.5H0z"></path>
+                      </defs>
+                      <clipPath id="manual_SVGID_4_">
+                        <use
+                          xlink:href="#manual_SVGID_23_"
+                          overflow="visible"
+                        ></use>
+                      </clipPath>
+                      <path
+                        d="M50 17.6v67m39.8-71.3h8.8v69.1H72.1c-8.8 0-15.5 4.3-15.5 13H43.4c0-8.6-6.6-13-15.5-13H1.4V13.3h8.8m39.9 73.4c0-8.6 4.4-13 13.2-13h26.5V4.6H63.3C54.4 4.6 50 9 50 17.6c0-8.6-4.4-13-13.3-13H10.2v69.1h26.5c8.9.1 13.4 4.4 13.4 13z"
+                        clip-path="url(#manual_SVGID_4_)"
+                        fill="none"
+                        stroke="#231f20"
+                        stroke-width="2.778"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+                <p class="mt-2">Manuals</p>
+              </div>
+              <div class="w-14 h-20 mx-auto">
+                <svg
+                  id="software_Layer_1"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 100 100"
+                  xml:space="preserve"
+                >
+                  <g id="Software_Updates_1_">
+                    <defs>
+                      <path id="software_SVGID_25_" d="M0 8.5h100v82.9H0z"></path>
+                    </defs>
+                    <clipPath id="software_SVGID_2_">
+                      <use
+                        xlink:href="#software_SVGID_25_"
+                        overflow="visible"
+                      ></use>
+                    </clipPath>
+                    <g clip-path="url(#software_SVGID_2_)">
+                      <defs>
+                        <path id="software_SVGID_27_" d="M0 8.5h100v82.9H0z"></path>
+                      </defs>
+                      <clipPath id="software_SVGID_4_">
+                        <use
+                          xlink:href="#software_SVGID_27_"
+                          overflow="visible"
+                        ></use>
+                      </clipPath>
+                      <path
+                        d="M51.2 47.6c0 7.3-5.9 13.3-13.2 13.3-7.3 0-13.2-6-13.2-13.3 0-7.3 5.9-13.3 13.2-13.3 7.3 0 13.2 6 13.2 13.3zm15.3-6.8l8.4-4.9-8.4-14.6-8.4 4.9c-3.3-3.1-7.3-5.4-11.7-6.7V9.6H29.6v9.8c-4.4 1.3-8.4 3.6-11.7 6.7l-8.4-4.9-8.4 14.7 8.4 4.9c-1.1 4.9-1.1 8.7 0 13.6l-8.4 4.9 8.4 14.6 8.4-4.9c3.3 3.1 7.3 5.4 11.7 6.7v9.8h16.8v-9.8m41-5L76.1 81.4 64.9 70.7m11.2 10.7V56m22.8 12.7c0 12-10.2 21.7-22.8 21.7-12.6 0-22.8-9.7-22.8-21.7S63.5 47 76.1 47c12.6.1 22.8 9.8 22.8 21.7z"
+                        clip-path="url(#software_SVGID_4_)"
+                        fill="none"
+                        stroke="#231f20"
+                        stroke-width="2.171"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+                <p class="mt-2">Software</p>
+              </div>
+              <div class="w-14 h-20 mx-auto">
+                <svg
+                  id="support_Layer_1"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 100 100"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M20.8 45.2l-6.1 17.4 19.4-12c2.3.4 4.5.6 6.7.6h1.4c-1-1.1-1.8-2.2-2.5-3.4-1.8-.1-3.7-.3-5.6-.6l-.6-.2-12.4 7.7 3.8-10.9-1.2-.7c-6.8-4.3-10.8-10.6-10.8-17.5 0-12.2 12.5-22.2 27.9-22.2 10.6 0 19.9 4.8 24.6 11.8 1.4.1 2.8.2 4.2.4C64.8 6.4 53.7 0 40.8 0 23.6 0 9.5 11.5 9.5 25.6c0 7.7 4.1 14.7 11.3 19.6z"
+                  ></path>
+                  <path
+                    d="M41.8 38.1c0 10.1 10 18.3 22.3 18.3 2.3 0 4.6-.3 6.8-.9l16.5 7.2-6.8-12.4c3.7-3.4 5.7-7.7 5.7-12.2 0-10.1-10-18.3-22.3-18.3S41.8 28 41.8 38.1zm41.1 0c0 4-1.9 7.7-5.5 10.5l-1.1.9 3.4 6.2-8.6-3.7-.6.2c-2.1.6-4.3.9-6.5.9-10.4 0-18.9-6.7-18.9-14.9S53.6 23.3 64 23.3s18.9 6.6 18.9 14.8z"
+                  ></path>
+                  <circle cx="53.4" cy="38.8" r="2.5"></circle>
+                  <circle cx="64.1" cy="38.8" r="2.5"></circle>
+                  <circle cx="74.8" cy="38.8" r="2.5"></circle>
+                  <path
+                    d="M29.2 100v-9.3c0-1.1-.9-2-2-2h-5.8v3.4h4.4v7.9h3.4zM5 90.7v9.3h3.4v-7.9h4.4v-3.4H7c-1.1 0-2 .9-2 2zM11.7 85.1c1.5 1.1 3.4 1.7 5.4 1.7s3.9-.6 5.4-1.7c2.4-1.7 4-4.5 4-7.6 0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4c0 3.1 1.6 5.9 4 7.6zm5.4-13.6c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6zM95 100v-9.3c0-1.1-.9-2-2-2h-5.8v3.4h4.4v7.9H95zM78.6 88.7h-5.8c-1.1 0-2 .9-2 2v9.3h3.4v-7.9h4.4v-3.4zM92.3 77.5c0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4c0 3.2 1.6 6 4 7.6 1.5 1.1 3.4 1.7 5.4 1.7 2 0 3.9-.6 5.4-1.7 2.4-1.7 4-4.5 4-7.6zm-9.4 5.9c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6c0 3.4-2.7 6-6 6z"
+                  ></path>
+                </svg>
+                <p class="mt-2">Support center</p>
+              </div>
+            </div>
+            <!-- <div class="flex flex-col items-center space-y-20 mt-6">
+              <p class="text-xl font-bold font-oswald uppercase">
+                Compatible Products
+              </p>
+              <div class="w-14 h-20 mx-auto">
+                <svg
+                  id="manual_Layer_1"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 100 100"
+                  xml:space="preserve"
+                >
+                  <g id="Audiobooks_1_">
+                    <defs>
+                      <path id="manual_SVGID_21_" d="M0 3.2h100v93.5H0z"></path>
+                    </defs>
+                    <clipPath id="manual_SVGID_2_">
+                      <use xlink:href="#manual_SVGID_21_" overflow="visible"></use>
+                    </clipPath>
+                    <g clip-path="url(#manual_SVGID_2_)">
+                      <defs>
+                        <path id="manual_SVGID_23_" d="M0 3.2h100v93.5H0z"></path>
+                      </defs>
+                      <clipPath id="manual_SVGID_4_">
+                        <use
+                          xlink:href="#manual_SVGID_23_"
+                          overflow="visible"
+                        ></use>
+                      </clipPath>
+                      <path
+                        d="M50 17.6v67m39.8-71.3h8.8v69.1H72.1c-8.8 0-15.5 4.3-15.5 13H43.4c0-8.6-6.6-13-15.5-13H1.4V13.3h8.8m39.9 73.4c0-8.6 4.4-13 13.2-13h26.5V4.6H63.3C54.4 4.6 50 9 50 17.6c0-8.6-4.4-13-13.3-13H10.2v69.1h26.5c8.9.1 13.4 4.4 13.4 13z"
+                        clip-path="url(#manual_SVGID_4_)"
+                        fill="none"
+                        stroke="#231f20"
+                        stroke-width="2.778"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+                <p class="mt-2">Manuals</p>
+              </div>
+              <div class="w-14 h-20 mx-auto">
+                <svg
+                  id="software_Layer_1"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 100 100"
+                  xml:space="preserve"
+                >
+                  <g id="Software_Updates_1_">
+                    <defs>
+                      <path id="software_SVGID_25_" d="M0 8.5h100v82.9H0z"></path>
+                    </defs>
+                    <clipPath id="software_SVGID_2_">
+                      <use
+                        xlink:href="#software_SVGID_25_"
+                        overflow="visible"
+                      ></use>
+                    </clipPath>
+                    <g clip-path="url(#software_SVGID_2_)">
+                      <defs>
+                        <path id="software_SVGID_27_" d="M0 8.5h100v82.9H0z"></path>
+                      </defs>
+                      <clipPath id="software_SVGID_4_">
+                        <use
+                          xlink:href="#software_SVGID_27_"
+                          overflow="visible"
+                        ></use>
+                      </clipPath>
+                      <path
+                        d="M51.2 47.6c0 7.3-5.9 13.3-13.2 13.3-7.3 0-13.2-6-13.2-13.3 0-7.3 5.9-13.3 13.2-13.3 7.3 0 13.2 6 13.2 13.3zm15.3-6.8l8.4-4.9-8.4-14.6-8.4 4.9c-3.3-3.1-7.3-5.4-11.7-6.7V9.6H29.6v9.8c-4.4 1.3-8.4 3.6-11.7 6.7l-8.4-4.9-8.4 14.7 8.4 4.9c-1.1 4.9-1.1 8.7 0 13.6l-8.4 4.9 8.4 14.6 8.4-4.9c3.3 3.1 7.3 5.4 11.7 6.7v9.8h16.8v-9.8m41-5L76.1 81.4 64.9 70.7m11.2 10.7V56m22.8 12.7c0 12-10.2 21.7-22.8 21.7-12.6 0-22.8-9.7-22.8-21.7S63.5 47 76.1 47c12.6.1 22.8 9.8 22.8 21.7z"
+                        clip-path="url(#software_SVGID_4_)"
+                        fill="none"
+                        stroke="#231f20"
+                        stroke-width="2.171"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+                <p class="mt-2">Software</p>
+              </div>
+              <div class="w-14 h-20 mx-auto">
+                <svg
+                  id="support_Layer_1"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 100 100"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M20.8 45.2l-6.1 17.4 19.4-12c2.3.4 4.5.6 6.7.6h1.4c-1-1.1-1.8-2.2-2.5-3.4-1.8-.1-3.7-.3-5.6-.6l-.6-.2-12.4 7.7 3.8-10.9-1.2-.7c-6.8-4.3-10.8-10.6-10.8-17.5 0-12.2 12.5-22.2 27.9-22.2 10.6 0 19.9 4.8 24.6 11.8 1.4.1 2.8.2 4.2.4C64.8 6.4 53.7 0 40.8 0 23.6 0 9.5 11.5 9.5 25.6c0 7.7 4.1 14.7 11.3 19.6z"
+                  ></path>
+                  <path
+                    d="M41.8 38.1c0 10.1 10 18.3 22.3 18.3 2.3 0 4.6-.3 6.8-.9l16.5 7.2-6.8-12.4c3.7-3.4 5.7-7.7 5.7-12.2 0-10.1-10-18.3-22.3-18.3S41.8 28 41.8 38.1zm41.1 0c0 4-1.9 7.7-5.5 10.5l-1.1.9 3.4 6.2-8.6-3.7-.6.2c-2.1.6-4.3.9-6.5.9-10.4 0-18.9-6.7-18.9-14.9S53.6 23.3 64 23.3s18.9 6.6 18.9 14.8z"
+                  ></path>
+                  <circle cx="53.4" cy="38.8" r="2.5"></circle>
+                  <circle cx="64.1" cy="38.8" r="2.5"></circle>
+                  <circle cx="74.8" cy="38.8" r="2.5"></circle>
+                  <path
+                    d="M29.2 100v-9.3c0-1.1-.9-2-2-2h-5.8v3.4h4.4v7.9h3.4zM5 90.7v9.3h3.4v-7.9h4.4v-3.4H7c-1.1 0-2 .9-2 2zM11.7 85.1c1.5 1.1 3.4 1.7 5.4 1.7s3.9-.6 5.4-1.7c2.4-1.7 4-4.5 4-7.6 0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4c0 3.1 1.6 5.9 4 7.6zm5.4-13.6c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6zM95 100v-9.3c0-1.1-.9-2-2-2h-5.8v3.4h4.4v7.9H95zM78.6 88.7h-5.8c-1.1 0-2 .9-2 2v9.3h3.4v-7.9h4.4v-3.4zM92.3 77.5c0-5.2-4.2-9.4-9.4-9.4s-9.4 4.2-9.4 9.4c0 3.2 1.6 6 4 7.6 1.5 1.1 3.4 1.7 5.4 1.7 2 0 3.9-.6 5.4-1.7 2.4-1.7 4-4.5 4-7.6zm-9.4 5.9c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6c0 3.4-2.7 6-6 6z"
+                  ></path>
+                </svg>
+                <p class="mt-2">Support center</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      
+     
+
+      
+    </div>
+  </body>`,
+      });
+
+
+
+
+
+      editor.BlockManager.add("FOOTER-PRODUCT-ACCESSORIES-2", {
+        label: `
+                <div style="text-align: center;">
+          <p class="text-2xl">ACCESSORIES-2</p>
+                </div>`,
+        category: "FOOTERS", // Or another category if preferred
+        content: `<body class="bg-gray-50">
+    <div class="flex flex-col md:flex-row gap-8 p-4 md:p-6 max-w-5xl mx-auto">
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-64 flex-shrink-0">
+            <nav class="space-y-1">
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-lg transition-colors">Apps</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-lg transition-colors">Bands</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-lg transition-colors">Cables & Chargers</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-lg transition-colors">Cycling Accessories</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-lg transition-colors">Heart Rate Monitors</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-lg transition-colors">Sensors</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-lg transition-colors">View All</a>
+            </nav>
+        </aside>
+
+        <!-- Category Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
+            <!-- Apps -->
+            <a href="#" class="block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="aspect-square relative mb-4">
+                    <img src="https://res.garmin.com/en/products/010-D1303-01/g/cf-lg.jpg" alt="Apps" class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-center text-lg font-medium">Apps</h3>
+            </a>
+
+            <!-- Bands -->
+            <a href="#" class="block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="aspect-square relative mb-4">
+                    <img src="https://res.garmin.com/en/products/010-12932-53/v/cf-lg-f39a9633-1bcb-4a05-9ee5-b6cbd0c55e14.jpg" alt="Bands" class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-center text-lg font-medium">Bands</h3>
+            </a>
+
+            <!-- Cables & Chargers -->
+            <a href="#" class="block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="aspect-square relative mb-4">
+                    <img src="https://res.garmin.com/en/products/010-13278-00/g/cf-lg.jpg" alt="Cables & Chargers" class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-center text-lg font-medium">Cables & Chargers</h3>
+            </a>
+
+            <!-- Cycling Accessories -->
+            <a href="#" class="block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="aspect-square relative mb-4">
+                    <img src="https://res.garmin.com/en/products/010-11029-00/v/cf-lg-31736a65-b19a-4a8e-a82d-f6c33fd992e9.jpg" alt="Cycling Accessories" class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-center text-lg font-medium">Cycling Accessories</h3>
+            </a>
+
+            <!-- Heart Rate Monitors -->
+            <a href="#" class="block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="aspect-square relative mb-4">
+                    <img src="https://res.garmin.com/en/products/010-13314-00/g/cf-lg.jpg" alt="Heart Rate Monitors" class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-center text-lg font-medium">Heart Rate Monitors</h3>
+            </a>
+
+            <!-- Sensors -->
+            <a href="#" class="block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="aspect-square relative mb-4">
+                    <img src="https://res.garmin.com/en/products/010-11092-30/g/cf-lg.jpg" alt="Sensors" class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-center text-lg font-medium">Sensors</h3>
+            </a>
+        </div>
+    </div>
+</body>`,
+      });
+
+
+
       const saveButton = document.getElementById('saveButton');
       const autoSaveToggle = document.getElementById('autoSaveToggle');
       let autoSaveInterval;
